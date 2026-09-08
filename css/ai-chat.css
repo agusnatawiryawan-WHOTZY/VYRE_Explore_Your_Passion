@@ -1,0 +1,33 @@
+.vyreAiWidget { position: fixed; right: 1.5rem; bottom: 1.5rem; z-index: 900; visibility: hidden; opacity: 0; transform: translateY(1rem) scale(.94); transition: opacity .35s ease, transform .35s ease, visibility .35s ease; }
+.vyreAiWidget.is-visible { visibility: visible; opacity: 1; transform: translateY(0) scale(1); }
+.vyreAiToggle { position: relative; display: grid; place-items: center; width: 3.8rem; height: 3.8rem; padding: .7rem; border: 1px solid rgba(184,155,255,.7); border-radius: 50%; background: #15151a; box-shadow: 0 0 0 .35rem rgba(184,155,255,.12), 0 .75rem 2rem rgba(17,17,17,.25); cursor: pointer; transition: transform .25s ease, box-shadow .25s ease; }
+.vyreAiToggle:hover { transform: translateY(-.2rem); box-shadow: 0 0 0 .5rem rgba(184,155,255,.16), 0 1rem 2rem rgba(17,17,17,.3); }
+.vyreAiToggle::before { content: ""; position: absolute; inset: -.45rem; border: 1px dashed rgba(184,155,255,.6); border-radius: 50%; animation: aiOrbit 6s linear infinite; }
+.vyreAiToggle img { width: 100%; height: 100%; object-fit: contain; filter: invert(1) brightness(1.8); }
+.vyreAiStatusDot { position: absolute; right: .05rem; bottom: .2rem; width: .7rem; height: .7rem; border: 2px solid #15151a; border-radius: 50%; background: #8dffb2; }
+.vyreAiPanel { position: absolute; right: 0; bottom: 5rem; display: flex; flex-direction: column; width: min(23rem, calc(100vw - 2rem)); height: min(33rem, calc(100vh - 12rem)); min-height: 16rem; overflow: hidden; border: 1px solid rgba(184,155,255,.45); background: #15151a; color: #fff; box-shadow: 0 1.5rem 3rem rgba(17,17,17,.3); opacity: 0; pointer-events: none; transform: translateY(.75rem); transition: opacity .25s ease, transform .25s ease; }
+.vyreAiWidget.is-open .vyreAiPanel { opacity: 1; pointer-events: auto; transform: translateY(0); }
+.vyreAiHeader { display: flex; align-items: center; justify-content: space-between; padding: .85rem 1rem; border-bottom: 1px solid rgba(255,255,255,.13); background: linear-gradient(135deg, #282333, #1e1d24); }
+.vyreAiIdentity { display: flex; align-items: center; gap: .55rem; }
+.vyreAiIdentity img { width: 1.7rem; height: 1.7rem; object-fit: contain; filter: invert(1) brightness(1.8); }
+.vyreAiIdentity p, .vyreAiIdentity span, .vyreAiEyebrow { margin: 0; font-family: var(--font-pixel); font-size: .48rem; letter-spacing: .08em; }
+.vyreAiIdentity span { display: block; margin-top: .25rem; color: #aaa7b0; font-family: var(--font-ui); font-size: .48rem; }
+.vyreAiClose { border: 0; background: transparent; color: #fff; font-size: 1.5rem; line-height: 1; cursor: pointer; }
+.vyreAiIntro { padding: 1.1rem 1rem .85rem; background: linear-gradient(145deg, #24222c, #15151a); }
+.vyreAiEyebrow { color: #b89bff; }
+.vyreAiIntro h2 { margin: .55rem 0 .4rem; font-family: var(--font-display); font-size: 1.45rem; line-height: 1; }
+.vyreAiIntro > p:last-child { margin: 0; color: #aaa7b0; font-size: .68rem; line-height: 1.5; }
+.vyreAiMessages { display: flex; flex: 1; flex-direction: column; gap: .65rem; overflow-y: auto; padding: 1rem; scrollbar-color: #7654b8 transparent; }
+.vyreAiMessage { max-width: 88%; padding: .65rem .75rem; font-size: .7rem; line-height: 1.5; }
+.vyreAiMessageBot { align-self: flex-start; border-left: 2px solid #b89bff; background: #24222c; color: #e8e4ee; }
+.vyreAiMessageUser { align-self: flex-end; background: #b89bff; color: #15151a; }
+.vyreAiQuickPrompts { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .1rem; }
+.vyreAiQuickPrompts button { padding: .45rem .55rem; border: 1px solid #46424e; background: transparent; color: #c8c5cc; font: inherit; font-size: .58rem; cursor: pointer; transition: .2s ease; }
+.vyreAiQuickPrompts button:hover { border-color: #b89bff; color: #fff; background: #24222c; }
+.vyreAiForm { display: flex; gap: .5rem; padding: .75rem; border-top: 1px solid rgba(255,255,255,.13); }
+.vyreAiForm input { min-width: 0; flex: 1; padding: .7rem; border: 1px solid #46424e; outline: 0; background: #24222c; color: #fff; font: inherit; font-size: .7rem; }
+.vyreAiForm input:focus { border-color: #b89bff; }
+.vyreAiForm button { width: 2.3rem; border: 0; background: #b89bff; color: #15151a; font-size: 1.2rem; cursor: pointer; }
+@keyframes aiOrbit { to { transform: rotate(360deg); } }
+@media (max-width: 560px) { .vyreAiWidget { right: .75rem; bottom: .75rem; } .vyreAiPanel { right: 0; bottom: 4.7rem; width: min(23rem, calc(100vw - 1.5rem)); height: min(33rem, calc(100vh - 12rem)); min-height: 16rem; } }
+@media (prefers-reduced-motion: reduce) { .vyreAiWidget, .vyreAiPanel, .vyreAiToggle { transition: none; } .vyreAiToggle::before { animation: none; } }

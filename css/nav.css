@@ -1,0 +1,473 @@
+a{
+    text-decoration: none;
+}
+.btnExplore:hover{
+    background-color:  #242424ec;
+}
+.container__dropDownPassionDeks{
+    position: absolute;
+    top: 3rem;
+    min-width: 18rem;
+    background-color: white;
+    box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+    gap: .5rem;
+    z-index: 10;
+    opacity: 0;
+    transform: translate3d(10rem,-.75rem,0) scale(.96);
+    transform-origin: top center;
+    transition: opacity .28s ease, transform .42s cubic-bezier(.2,.8,.2,1), visibility 0s linear .42s;
+    visibility: hidden;
+    pointer-events: none;
+    border-radius: .25rem;
+}
+.container__dropDownPassionDeks.dropDeksAktif{
+    opacity: 1;
+    transform: translate3d(10rem,0,0) scale(1);
+    visibility: visible;
+    pointer-events: auto;
+    transition-delay: 0s;
+}
+.container__dropDownPassionDeks ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+.btnPassionsDeks{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: none;
+    border: none;
+    padding: .8rem 1rem;
+    transition: transform .35s cubic-bezier(.2,.8,.2,1), background-color .25s ease, border-color .25s ease;
+    width: 100%;
+    border-bottom: 1px solid var(--color-brand-hover);
+}
+.btnPassionsDeks:hover{
+    transform: translateX(.55rem);
+    background-color: #ff6b2c09;
+}
+.container__dropDownPassionDeks .btnPassionsDeks .material-symbols-rounded {
+    transition: transform .35s cubic-bezier(.2,.8,.2,1);
+}
+.container__dropDownPassionDeks .btnPassionsDeks:hover .material-symbols-rounded {
+    transform: translateX(.25rem);
+}
+.container__textFlexDropDownPassionDeks{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+.container__textDropDownPassionDeks{
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+.container__textFlexDropDownPassionDeks h5{
+    font-size: var(--fs-body-md);
+}
+.container__textFlexDropDownPassionDeks h4{
+    font-size: var(--fs-body-sm);
+}
+.container__textDropDownPassionDeks p{
+    font-size: var(--fs-caption);
+}
+.iconDropDownDeks{
+    font-size: var(--fs-body-md);
+}
+#navBarMain{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    padding: 1rem clamp(3.5rem, 10vw,6rem);
+    background-color: var(--color-white);
+    align-items: center;
+    justify-content: space-between;
+    z-index: 998;
+    transition: all .3s ease-in-out;
+}
+#navBarMain.navPaddingAktif{
+    padding: 1rem 2.5rem;
+    background-color: rgba(255, 255, 255, 0.86);
+    backdrop-filter: blur(50px);
+}
+.logoNav{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+.logoNav h3{
+    font-size: var(--fs-h4);
+    font-family: var(--font-display);
+}
+.logoNav img{
+    width: 2rem;
+    height: auto;
+}
+#navDekstop{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+.container__flexNavDeks{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+}
+.container__ulDekstop ul{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+}
+.container__ulDekstop ul a{
+    font-size: var(--fs-body-sm);
+    color: var(--color-dark);
+    font-weight: var(--fw-medium);
+    position: relative;
+}
+#btnPassionDropDeks{
+    background: none;
+    border: none;
+    font-size: var(--fs-body-sm);
+    color: var(--color-dark);
+    font-weight: var(--fw-medium);
+    position: relative;
+}
+#btnPassionDropDeks[aria-expanded="true"]::before{
+    width: 100%;
+}
+#btnPassionDropDeks::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -.5rem;
+    width: 0%;
+    height: .1rem;
+    background-color: var(--color-dark);
+    transition: all .3s ease-in ;
+}
+#btnPassionDropDeks:hover::before{
+    width: 100%;
+}
+.container__ulDekstop ul a::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -.5rem;
+    width: 0%;
+    height: .1rem;
+    background-color: var(--color-dark);
+    transition: all .3s ease-in ;
+}
+.container__ulDekstop a:hover{
+    color: var( --color-dark-secondary);
+}
+.container__ulDekstop ul a:hover::before {
+    width: 100%;
+}
+/* //mobile */
+#hamburgerNavMobile{
+    align-self: flex-end;
+    background: none;
+    border: none;
+    position: relative;
+}
+#hamburgerNavMobile .material-symbols-rounded{
+    font-size: var(--fs-display-sm);
+    color: var(--color-dark);
+}
+.btnToDropDown{
+     background: none;
+    border: none;
+     font-size: var(--fs-body-sm);
+    color: var(--color-dark);
+    font-weight: var(--fw-medium);
+    position: relative;
+}
+.btnExplore{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .8rem 1rem;
+    background-color: var(--color-dark);
+    color: white;
+    border: none;
+    border-radius: .2rem;
+    gap: .8rem;
+    transition: all .3s ease-in-out;
+}
+.btnExplore .material-symbols-rounded{
+    font-size: var(--fs-h4);
+}
+.btnExplore h4{
+    font-size: var(--fs-body-sm);
+}
+
+/* NAV MOBILE */
+.overlayNavMobile{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.313);
+    z-index: 997;
+    display: none;
+}
+.overlayNavMobile.aktifOverlayNav{
+    display: block;
+}
+.containerNavMobile{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: min(20rem, 88vw);
+    min-width: 0;
+    max-width: 20rem;
+    top: 0;
+    padding: 2rem;
+    height: 100dvh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    background-color: var(--color-surface-primary);
+    transform: translateX(-105%);
+    opacity: 0;
+    transition: all .3s ease-in-out;
+    z-index: 999;
+}
+.containerNavMobile.menuNavMobileAktif{
+    opacity: 1;
+    transform: translateX(0);
+}
+.container__headerNavmobile{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.container__flexHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logoNavmobile{
+    display: flex;
+    align-items: center;
+}
+.logoNavmobile .namaLogo{
+    font-size: var(--fs-h2);
+    font-family: var(--font-display);
+}
+.logoNavmobile img{
+    width: 3rem;
+}
+#closeNavMobile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+    padding: 1rem;
+}
+#closeNavMobile .material-symbols-rounded{
+    font-size: var(--icon-2xl);
+    color: var(--color-dark);
+}
+#navMobile{
+   display: flex;
+   flex-direction: column;
+   gap: 2rem;
+   min-height: 5rem;
+   width: 100%;
+}
+#navMobile ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+#navMobile ul li{
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+#navMobile ul li a{
+    display: block;
+    font-size: var(--fs-h2);
+    width: 100%;
+    padding: 1rem;
+    color: var(--color-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all .3s ease-in-out;
+}
+#navMobile ul li a:hover{
+    color: var(--color-brand-hover);
+    transform: translateX(-1rem);
+}
+#navMobile ul li a .material-symbols-rounded{
+    font-size: var(--fs-h4);
+}
+.container__dropDownMenu{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: .5rem;
+    gap: .8rem;
+    position: relative;
+    z-index: 1;
+    transition: all .3s ease-in-out;
+}
+.btnToDropDown:hover{
+    color: var(--color-brand-hover);
+    transform: translateX(-.5rem);
+}
+.btnToDropDown{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: .5rem 0;
+    transition: all .3s ease-in-out;
+}
+.btnToDropDown .material-symbols-rounded{
+    font-size: var(--fs-h2);
+}
+.btnToDropDown h4{
+    font-weight: 500;
+    font-size: var(--fs-h2);
+}
+.dropDownMenuMobile{
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    height: 0;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+}
+.dropDownMenuMobile.dropAktif{
+    opacity: 1;
+    height: 17rem;
+}
+.btnPassions{
+    display: flex;
+    align-items: center;
+    padding: 1rem .5rem;
+    padding-left: 1.5rem;
+    gap: .8rem;
+    text-align: start;
+    background: none;
+    border: none;
+    border-radius: .5rem;
+    transition: all .3s ease-in-out;
+}
+.btnPassions:hover{
+    background-color: #ff6b2c24;
+    transform: translateX(1rem);
+}
+.btnPassions h5{
+    font-size: var(--fs-body-xs);
+}
+.btnPassions .material-symbols-rounded{
+    padding: .8rem;
+    background-color: var(--color-fashion);
+    border-radius: 10rem;
+    color: var(--color-dark);
+    font-size: var(--fs-h4);
+}
+.btnPassions #iconPassionsSports{
+    background-color: rgba(137, 181, 255, 1);
+}
+.btnPassions #iconPassionGaming{
+    background-color: var(--color-gaming);
+}
+.container__textExploreDropDown h4{
+    font-size: var(--fs-body-md);
+    
+}
+.container__textExploreDropDown p{
+    font-size: var(--fs-caption);
+}
+
+.container__navMobileBottom{
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+.container__flexNavMobileBottom{
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    justify-content: center;
+}
+.container__flexNavMobileBottom {
+    list-style: none;
+}
+.container__flexNavMobileBottom li a{
+    color: var(--color-dark);
+}
+#ulBottomNavMobilePassions li:before{
+    content: "•"; 
+    color: var(--color-brand-hover);
+    margin-right: 1rem;
+}
+#ulBottomNavMobilePassions li:nth-child(1)::before{
+    display: none;
+}
+#ulBottomSosmedNavMobile{
+    display: flex;
+    gap: 1.5rem;
+    justify-content: start;
+}
+#ulBottomSosmedNavMobile a i{
+    font-size: var(--fs-h4);
+}
+
+@media (min-width:56rem) {
+    #hamburgerNavMobile{
+        display: none;
+    }
+    .containerNavMobile{
+        display: none;
+    }
+    .overlayNavMobile{
+        display: none;
+    }
+}
+@media (max-width:56rem) {
+    #hamburgerNavMobile{
+        display: block;
+    }
+    #navDekstop{
+        display: none;
+    }
+    #exploreStyle{
+        display: none;
+    }
+    .containerNavMobile{
+        display: block;
+    }
+}
+@media (prefers-reduced-motion: reduce){
+    .container__dropDownPassionDeks,
+    .btnPassionsDeks,
+    .container__dropDownPassionDeks .btnPassionsDeks .material-symbols-rounded {
+        transition: none;
+    }
+}

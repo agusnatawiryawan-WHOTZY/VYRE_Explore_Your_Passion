@@ -1,0 +1,933 @@
+/* =========================================================
+   PASSION
+========================================================= */
+
+#passion {
+  position: relative;
+
+  width: 100%;
+
+  padding: 8rem 5vw 6rem;
+
+  background: #ffffff;
+
+  overflow: hidden;
+}
+
+.passionControllerScene {
+  position: absolute;
+  z-index: 0;
+  top: 10rem;
+  right: -9rem;
+  width: min(48vw, 42rem);
+  aspect-ratio: 1;
+  pointer-events: none;
+  perspective: 900px;
+  opacity: .16;
+}
+
+.passionControllerGlow {
+  position: absolute;
+  inset: 18%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(184, 155, 255, .55), transparent 68%);
+  filter: blur(1rem);
+}
+
+.passionControllerBackground {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: translate3d(0, 0, 0) rotateX(8deg) rotateY(-16deg) rotateZ(12deg) scale(.9);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.passionIntro {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: 1.2fr .8fr;
+
+  gap: 3rem;
+
+  min-height: 17rem;
+
+  margin-bottom: 3rem;
+}
+
+
+/* =========================================================
+   INTRO LEFT
+========================================================= */
+
+.passionIntroLeft {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-start;
+}
+
+.passionEyebrow {
+  display: inline-block;
+
+  margin-bottom: 1.2rem;
+
+  font-size: .65rem;
+
+  font-weight: 600;
+
+  letter-spacing: .1em;
+
+  text-transform: uppercase;
+
+  color: #686873;
+}
+
+
+.passionIntroLeft h2 {
+  margin: 0;
+
+  max-width: 55rem;
+
+  font-size: clamp(2.2rem, 4vw, 4.5rem);
+
+  line-height: .92;
+
+  font-weight: 700;
+
+  letter-spacing: -.065em;
+
+  color: #15151a;
+}
+
+
+/* =========================================================
+   INTRO RIGHT
+========================================================= */
+
+.passionIntroRight {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-end;
+
+  align-items: flex-start;
+
+  padding-bottom: .2rem;
+}
+
+
+.passionIntroRight p {
+  max-width: 18rem;
+
+  margin: 0 0 1rem;
+
+  font-size: .68rem;
+
+  line-height: 1.6;
+
+  color: #686873;
+}
+
+
+/* =========================================================
+   EXPLORE BUTTON
+========================================================= */
+
+.passionExploreBtn {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: .7rem;
+
+  padding: .65rem .9rem;
+
+  border: 1px solid #dcd9e2;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  font-size: .58rem;
+
+  font-weight: 600;
+
+  color: #15151a;
+
+  transition:
+    background-color .3s ease,
+    transform .3s ease;
+}
+
+
+.passionExploreBtn i {
+  font-size: .5rem;
+
+  transition:
+    transform .3s ease;
+}
+
+
+.passionExploreBtn:hover {
+  background: #f6f4f9;
+
+  transform: translateY(-2px);
+}
+
+
+.passionExploreBtn:hover i {
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   FEATURED
+========================================================= */
+
+.passionFeatured {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: .85fr 1fr 1.25fr;
+
+  gap: 1rem;
+
+  margin-bottom: 3rem;
+}
+
+
+/* =========================================================
+   FEATURED PRODUCT
+========================================================= */
+
+.passionFeaturedProduct {
+  min-width: 0;
+
+  overflow: hidden;
+
+  border: 1px solid #dddbe2;
+
+  border-radius: .45rem;
+
+  background: #ffffff;
+}
+
+
+.passionProductImage {
+  width: 100%;
+
+  height: 20rem;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 1rem;
+
+  overflow: hidden;
+}
+
+
+.passionProductImage img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  transition:
+    transform .7s cubic-bezier(.2,.7,.2,1);
+}
+
+
+.passionFeaturedProduct:hover
+.passionProductImage img {
+  transform: scale(1.07);
+}
+
+
+/* INFO */
+
+.passionProductInfo {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: .7rem .8rem;
+
+  border-top: 1px solid #dddbe2;
+}
+
+
+.passionProductInfo span {
+  font-size: .5rem;
+
+  font-weight: 600;
+
+  color: #686873;
+}
+
+
+/* =========================================================
+   LIFESTYLE
+========================================================= */
+
+.passionLifestyleImage {
+  min-width: 0;
+
+  min-height: 20rem;
+
+  overflow: hidden;
+
+  border-radius: .45rem;
+
+  background: #ddd3ff;
+}
+
+
+.passionLifestyleImage img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform .8s cubic-bezier(.2,.7,.2,1);
+}
+
+
+.passionLifestyleImage:hover img {
+  transform: scale(1.04);
+}
+
+
+/* =========================================================
+   PROMO
+========================================================= */
+
+.passionPromoCard {
+  position: relative;
+
+  min-width: 0;
+
+  min-height: 20rem;
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 1.1rem;
+
+  overflow: hidden;
+
+  border-radius: .45rem;
+
+  background: #e9e1ff;
+}
+
+
+/* =========================================================
+   PROMO TOP
+========================================================= */
+
+.passionPromoTop {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+
+.passionPromoTop span {
+  font-size: .65rem;
+
+  font-weight: 700;
+
+  color: #7c5ed0;
+}
+
+
+.passionPromoTop small {
+  font-size: .42rem;
+
+  color: #686873;
+}
+
+
+/* =========================================================
+   PROMO CONTENT
+========================================================= */
+
+.passionPromoContent {
+  flex: 1;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 1rem;
+}
+
+
+.passionPromoContent > div:first-child {
+  position: relative;
+
+  z-index: 2;
+}
+
+
+.passionPromoContent span {
+  font-size: .48rem;
+
+  font-weight: 600;
+
+  color: #686873;
+}
+
+
+.passionPromoContent h3 {
+  max-width: 11rem;
+
+  margin: .5rem 0 0;
+
+  font-size: 1.2rem;
+
+  line-height: .95;
+
+  font-weight: 700;
+
+  letter-spacing: -.04em;
+
+  color: #15151a;
+}
+
+
+/* =========================================================
+   PROMO PRODUCT
+========================================================= */
+
+.passionPromoProduct {
+  width: 50%;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: center;
+}
+
+
+.passionPromoProduct img {
+  width: 100%;
+
+  object-fit: contain;
+
+  transform: rotate(-8deg);
+
+  transition:
+    transform .6s cubic-bezier(.2,.7,.2,1);
+}
+
+
+.passionPromoCard:hover
+.passionPromoProduct img {
+  transform:
+    rotate(-4deg)
+    scale(1.06);
+}
+
+
+/* =========================================================
+   PROMO BUTTON
+========================================================= */
+
+.passionPlayButton {
+  position: absolute;
+
+  left: 1rem;
+  bottom: 1rem;
+
+  width: 2.1rem;
+  height: 2.1rem;
+
+  display: grid;
+
+  place-items: center;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  color: #15151a;
+
+  cursor: pointer;
+
+  transition:
+    transform .3s ease;
+}
+
+
+.passionPlayButton:hover {
+  transform: translate(2px, -2px);
+}
+
+
+/* =========================================================
+   PRODUCT HEADING
+========================================================= */
+
+.passionProductHeading {
+  position: relative;
+  z-index: 1;
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: .8rem;
+}
+
+
+.passionProductHeading h3 {
+  margin: 0;
+
+  font-size: .8rem;
+
+  font-weight: 700;
+
+  color: #15151a;
+}
+
+
+.passionProductHeading a {
+  display: flex;
+
+  align-items: center;
+
+  gap: .3rem;
+
+  padding: .35rem .7rem;
+
+  border-radius: 999px;
+
+  background: #c8b6ff;
+
+  text-decoration: none;
+
+  font-size: .48rem;
+
+  font-weight: 600;
+
+  color: #15151a;
+
+  transition:
+    transform .3s ease;
+}
+
+
+.passionProductHeading a:hover {
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   PRODUCT LIST
+========================================================= */
+
+.passionProductList {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+
+  display: flex;
+
+  gap: .8rem;
+
+  overflow-x: auto;
+
+  overflow-y: hidden;
+
+  padding-bottom: .6rem;
+
+  scroll-behavior: smooth;
+
+  scroll-snap-type: x proximity;
+
+  scrollbar-width: none;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+
+.passionProductList::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* =========================================================
+   PRODUCT CARD
+========================================================= */
+
+.passionProductCard {
+  position: relative;
+
+  width: 12rem;
+  min-width: 12rem;
+
+  flex: 0 0 12rem;
+
+  height: 13rem;
+
+  display: flex;
+
+  flex-direction: column;
+
+  overflow: hidden;
+
+  border-radius: .7rem;
+
+  text-decoration: none;
+
+  scroll-snap-align: start;
+
+  transition:
+    transform .4s cubic-bezier(.2,.7,.2,1);
+}
+
+
+.passionProductCard:hover {
+  transform: translateY(-5px);
+}
+
+
+/* =========================================================
+   CARD COLORS
+========================================================= */
+
+.passionProductCard:nth-child(1) {
+  background: #e8ddff;
+}
+
+.passionProductCard:nth-child(2) {
+  background: #d9e6ff;
+}
+
+.passionProductCard:nth-child(3) {
+  background: #eeeeef;
+}
+
+.passionProductCard:nth-child(4) {
+  background: #ffe0ee;
+}
+
+.passionProductCard:nth-child(5) {
+  background: #def1e6;
+}
+
+.passionProductCard:nth-child(6) {
+  background: #fff0d8;
+}
+
+.passionProductCard:nth-child(7) {
+  background: #e6defb;
+}
+
+.passionProductCard:nth-child(8) {
+  background: #dce8fa;
+}
+
+
+/* =========================================================
+   CARD IMAGE
+========================================================= */
+
+.passionCardImage {
+  flex: 1;
+
+  min-height: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: .5rem;
+
+  overflow: hidden;
+}
+
+
+.passionCardImage img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+
+  transform: scale(1.12);
+
+  transition:
+    transform .5s cubic-bezier(.2,.7,.2,1);
+}
+
+
+.passionProductCard:hover
+.passionCardImage img {
+  transform: scale(1.18);
+}
+
+
+/* =========================================================
+   CARD BOTTOM
+========================================================= */
+
+.passionCardBottom {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: .5rem;
+
+  padding: .55rem .7rem;
+
+  background: rgba(255,255,255,.25);
+}
+
+
+.passionCardBottom span {
+  font-size: .45rem;
+
+  font-weight: 700;
+
+  letter-spacing: .08em;
+
+  color: rgba(21,21,26,.55);
+}
+
+
+.passionCardBottom h4 {
+  margin: 0;
+
+  font-size: .48rem;
+
+  font-weight: 600;
+
+  color: #15151a;
+}
+
+
+/* =========================================================
+   INTERSECTION OBSERVER
+========================================================= */
+
+.passionReveal {
+  opacity: 0;
+
+  transform: translateY(35px);
+
+  transition:
+    opacity .8s ease,
+    transform .8s cubic-bezier(.2,.7,.2,1);
+}
+
+
+.passionReveal.is-visible {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  #passion {
+    padding: 6rem 6vw;
+  }
+
+
+  .passionIntro {
+    grid-template-columns: 1fr .7fr;
+
+    gap: 2rem;
+
+    min-height: 15rem;
+  }
+
+
+  .passionIntroLeft h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+  }
+
+
+  .passionFeatured {
+    grid-template-columns: 1fr 1fr;
+  }
+
+
+  .passionPromoCard {
+    grid-column: 1 / -1;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  #passion {
+    padding: 5rem 1.2rem;
+  }
+
+
+  .passionIntro {
+    grid-template-columns: 1fr;
+
+    gap: 2rem;
+
+    min-height: auto;
+  }
+
+
+  .passionIntroLeft h2 {
+    font-size: clamp(2.2rem, 11vw, 3.5rem);
+  }
+
+
+  .passionIntroRight {
+    align-items: flex-start;
+
+    padding: 0;
+  }
+
+
+  .passionIntroRight p {
+    max-width: 22rem;
+  }
+
+
+  .passionFeatured {
+    grid-template-columns: 1fr;
+
+    gap: .8rem;
+  }
+
+
+  .passionFeaturedProduct {
+    min-height: 20rem;
+  }
+
+
+  .passionProductImage {
+    height: 20rem;
+  }
+
+
+  .passionLifestyleImage {
+    height: 20rem;
+  }
+
+
+  .passionPromoCard {
+    min-height: 18rem;
+  }
+
+
+  .passionProductList {
+    gap: .7rem;
+
+    scroll-snap-type: x mandatory;
+  }
+
+
+  .passionProductCard {
+    width: 10rem;
+    min-width: 10rem;
+
+    flex-basis: 10rem;
+
+    height: 11rem;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  #passion {
+    padding-inline: 1rem;
+  }
+
+
+  .passionProductCard {
+    width: 9.3rem;
+    min-width: 9.3rem;
+
+    flex-basis: 9.3rem;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .passionExploreBtn,
+  .passionExploreBtn i,
+  .passionProductImage img,
+  .passionLifestyleImage img,
+  .passionPromoProduct img,
+  .passionPlayButton,
+  .passionProductHeading a,
+  .passionProductCard,
+  .passionCardImage img,
+  .passionReveal {
+    transition: none;
+  }
+
+}

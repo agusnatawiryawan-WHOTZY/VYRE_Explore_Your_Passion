@@ -1,0 +1,35 @@
+.catalogPage { background: #f5f4f0; }
+.catalogMainNav { display: flex; align-items: center; gap: 1.25rem; }
+.catalogMainNav a { color: #686873; font-size: .72rem; text-decoration: none; }
+.catalogMainNav a:hover, .catalogNavActive { color: #15151a !important; }
+.catalogMainNav .catalogCartLink { display: inline-flex; align-items: center; gap: .35rem; padding: .55rem .75rem; border: 1px solid #d6d2ca; color: #15151a; }
+.catalogMainNav span { display: grid; place-items: center; min-width: 1.15rem; height: 1.15rem; border-radius: 50%; background: #b89bff; font-size: .58rem; }
+.catalogMain { width: min(100% - 2rem, 70rem); margin: 0 auto; padding: 5rem 0 6rem; }
+.catalogIntro { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-bottom: 4rem; }
+.catalogIntro h1 { margin: 0; font-family: var(--font-display); font-size: clamp(3.5rem, 9vw, 7.5rem); line-height: .82; letter-spacing: -.04em; }
+.catalogIntro h1 em { color: #7654b8; font-style: normal; }
+.catalogDescription { max-width: 15rem; margin: 0 0 .4rem; color: #686873; font-size: .78rem; line-height: 1.65; }
+.catalogToolbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; padding-bottom: .75rem; border-bottom: 1px solid #d6d2ca; }
+.catalogToolbar > span { color: #77737e; font-size: .62rem; letter-spacing: .1em; }
+.catalogFilters { display: flex; flex-wrap: wrap; gap: .35rem; }
+.catalogFilter { padding: .6rem .8rem; border: 1px solid #d6d2ca; background: transparent; color: #686873; font: inherit; font-size: .68rem; cursor: pointer; }
+.catalogFilter.is-active, .catalogFilter:hover { border-color: #15151a; background: #15151a; color: #fff; }
+.catalogGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .75rem; }
+.catalogCard { position: relative; display: flex; min-height: 20rem; flex-direction: column; overflow: hidden; background: #fff; border: 1px solid #dedbd5; transition: transform .3s ease, box-shadow .3s ease; }
+.catalogCard:hover { transform: translateY(-.35rem); box-shadow: 0 1rem 2rem rgba(17,17,17,.1); }
+.catalogCardImage { display: grid; place-items: center; min-height: 13rem; padding: 1rem; background: linear-gradient(145deg, #eceaf2, #f9f8f6); }
+.catalogCardImage img { width: 100%; height: 11rem; object-fit: contain; transition: transform .4s ease; }
+.catalogCard:hover .catalogCardImage img { transform: scale(1.08) rotate(-3deg); }
+.catalogCardInfo { display: flex; flex: 1; flex-direction: column; padding: .9rem; }
+.catalogCardCategory { margin: 0 0 .35rem; color: #7654b8; font-size: .58rem; font-weight: 700; letter-spacing: .1em; }
+.catalogCard h2 { margin: 0 0 .8rem; font-size: 1rem; }
+.catalogCardBottom { display: flex; align-items: center; justify-content: space-between; gap: .5rem; margin-top: auto; }
+.catalogCardPrice { color: #15151a; font-size: .78rem; font-weight: 700; }
+.catalogAdd { display: inline-flex; align-items: center; gap: .35rem; padding: .55rem .65rem; border: 0; background: #15151a; color: #fff; font: inherit; font-size: .62rem; cursor: pointer; }
+.catalogAdd:hover { background: #7654b8; }
+.catalogEmpty { grid-column: 1 / -1; padding: 3rem; border: 1px dashed #c9c5bd; text-align: center; color: #686873; }
+@media (max-width: 850px) { .catalogGrid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 900px) { .catalogMainNav { gap: .65rem; } .catalogMainNav a { font-size: .62rem; } }
+@media (max-width: 700px) { .shopHeader { align-items: flex-start; gap: 1rem; } .catalogMainNav { flex-wrap: wrap; justify-content: flex-end; } }
+@media (max-width: 560px) { .catalogIntro { display: block; } .catalogDescription { margin-top: 1.5rem; } .catalogToolbar { align-items: start; flex-direction: column; } .catalogGrid { grid-template-columns: 1fr; } .catalogCard { min-height: auto; } .catalogMainNav { display: grid; grid-template-columns: repeat(3, auto); justify-items: end; gap: .5rem .75rem; } }
+@media (max-width: 420px) { .catalogMainNav { grid-template-columns: repeat(2, auto); } .catalogMain { width: min(100% - 1.5rem, 70rem); } .catalogIntro h1 { font-size: clamp(3rem, 16vw, 5rem); } }

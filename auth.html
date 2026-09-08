@@ -1,0 +1,126 @@
+<!doctype html>
+<!-- VYRE account access -->
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VYRE Login</title>
+    <link
+      rel="icon"
+      href="assets/vyre-favicon-light.svg"
+      type="image/svg+xml"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Syne:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0..1,0..200"
+    />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/loader.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/auth.css" />
+  </head>
+  <body class="authPage">
+    <div
+      class="pageLoader"
+      id="pageLoader"
+      aria-label="Memuat VYRE"
+      role="status"
+    >
+      <div class="pageLoaderPanel">
+        <div class="loaderBrand">
+          <span>VYRE // IDENTITY</span><span>PLAYER 01</span>
+        </div>
+        <div class="loaderCore"><span class="loaderCrosshair"></span></div>
+        <h1 class="loaderTitle">ENTER YOUR WORLD</h1>
+        <p class="loaderStatus" id="loaderStatus">VERIFYING ACCESS</p>
+        <div class="loaderTrack">
+          <div class="loaderProgress" id="loaderProgress"></div>
+        </div>
+        <div class="loaderMeta">
+          <span>Loading account</span><span>2026</span>
+        </div>
+      </div>
+    </div>
+    <header class="authHeader">
+      <a class="authBrand" href="index.html">VYRE</a
+      ><a class="authHome" href="index.html"
+        ><span class="material-symbols-rounded">home</span> Home</a
+      >
+    </header>
+    <main class="authMain">
+      <section class="authIntro">
+        <p class="authEyebrow">VYRE / PLAYER ACCESS</p>
+        <h1>Make the<br /><em>move.</em></h1>
+        <p>
+          Masuk untuk menyimpan pilihanmu dan mulai membangun loadout personal.
+        </p>
+      </section>
+      <section class="authPanel">
+        <div class="authTabs">
+          <button class="is-active" type="button" data-auth-tab="login">
+            Login</button
+          ><button type="button" data-auth-tab="register">Register</button>
+        </div>
+        <div id="authMessage" class="authMessage" role="status"></div>
+        <form id="loginForm" class="authForm">
+          <label for="loginEmail">Email</label
+          ><input
+            id="loginEmail"
+            type="email"
+            required
+            autocomplete="email"
+            placeholder="nama@email.com"
+          /><label for="loginPassword">Password</label
+          ><input
+            id="loginPassword"
+            type="password"
+            required
+            autocomplete="current-password"
+            placeholder="Masukkan password"
+          /><button class="authSubmit" type="submit">
+            Masuk <span class="material-symbols-rounded">arrow_forward</span>
+          </button>
+        </form>
+        <form id="registerForm" class="authForm" hidden>
+          <label for="registerName">Nama lengkap</label
+          ><input
+            id="registerName"
+            required
+            autocomplete="name"
+            placeholder="Nama kamu"
+          /><label for="registerEmail">Email</label
+          ><input
+            id="registerEmail"
+            type="email"
+            required
+            autocomplete="email"
+            placeholder="nama@email.com"
+          /><label for="registerPassword">Password</label
+          ><input
+            id="registerPassword"
+            type="password"
+            required
+            minlength="6"
+            autocomplete="new-password"
+            placeholder="Minimal 6 karakter"
+          /><button class="authSubmit" type="submit">
+            Buat akun
+            <span class="material-symbols-rounded">arrow_forward</span>
+          </button>
+        </form>
+      </section>
+    </main>
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script src="js/smooth-scroll.js"></script>
+    <script src="js/parallax.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/page-loader.js"></script>
+  </body>
+</html>

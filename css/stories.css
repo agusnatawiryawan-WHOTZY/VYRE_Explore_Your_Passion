@@ -1,0 +1,605 @@
+/* =========================================================
+   STORIES
+========================================================= */
+
+#stories {
+  position: relative;
+
+  width: 100%;
+
+  padding: 6rem 5vw 5rem;
+
+  background: #f8f7fb;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   MAIN VISUAL
+========================================================= */
+
+.storiesHeroVisual {
+  position: relative;
+
+  width: 100%;
+  height: 31rem;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr
+    1fr;
+
+  overflow: hidden;
+
+  border-radius: 1rem;
+
+  background: #ddd3ff;
+}
+
+
+/* =========================================================
+   IMAGE ITEM
+========================================================= */
+
+.storiesVisualItem {
+  position: relative;
+
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.storiesVisualItem img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform .9s cubic-bezier(.2, .7, .2, 1);
+}
+
+
+/* INDIVIDUAL POSITION */
+
+.storiesVisualOne img {
+  object-position: center;
+}
+
+.storiesVisualTwo img {
+  object-position: center;
+}
+
+.storiesVisualThree img {
+  object-position: center;
+}
+
+
+/* HOVER */
+
+.storiesHeroVisual:hover
+.storiesVisualItem img {
+  transform: scale(1.03);
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.storiesVisualOverlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 35%,
+      rgba(0, 0, 0, .7) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   HERO TEXT
+========================================================= */
+
+.storiesHeroText {
+  position: absolute;
+
+  left: 2rem;
+  bottom: 2rem;
+
+  z-index: 3;
+
+  color: #fff;
+}
+
+.storiesHeroText span {
+  display: block;
+
+  margin-bottom: .3rem;
+
+  font-size: .65rem;
+
+  font-weight: 600;
+
+  letter-spacing: .12em;
+
+  text-transform: uppercase;
+}
+
+.storiesHeroText h2 {
+  margin: 0;
+
+  font-size: clamp(
+    3rem,
+    6vw,
+    6rem
+  );
+
+  line-height: .82;
+
+  font-weight: 700;
+
+  letter-spacing: -.07em;
+}
+
+
+/* =========================================================
+   HERO LABEL
+========================================================= */
+
+.storiesHeroLabel {
+  position: absolute;
+
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+
+  z-index: 4;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  font-size: .5rem;
+
+  font-weight: 600;
+
+  letter-spacing: .08em;
+
+  color: rgba(255,255,255,.85);
+}
+
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.storiesBottom {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr
+    1.2fr;
+
+  gap: 4rem;
+
+  padding-top: 3rem;
+}
+
+
+/* =========================================================
+   SMALL LABEL
+========================================================= */
+
+.storiesSmallLabel {
+  display: block;
+
+  margin-bottom: 1rem;
+
+  font-size: .55rem;
+
+  font-weight: 700;
+
+  letter-spacing: .1em;
+
+  text-transform: uppercase;
+
+  color: #8b8791;
+}
+
+
+/* =========================================================
+   LEFT
+========================================================= */
+
+.storiesBottomLeft h3,
+.storiesBottomCenter h3 {
+  margin: 0;
+
+  font-size: clamp(
+    1.7rem,
+    2.7vw,
+    3rem
+  );
+
+  line-height: .9;
+
+  font-weight: 700;
+
+  letter-spacing: -.055em;
+
+  color: #15151a;
+}
+
+
+.storiesBottomLeft p {
+  max-width: 17rem;
+
+  margin: 1rem 0 0;
+
+  font-size: .68rem;
+
+  line-height: 1.7;
+
+  color: #686873;
+}
+
+
+/* =========================================================
+   CENTER
+========================================================= */
+
+.storiesBottomCenter {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+
+.storiesBottomCenter h3 {
+  margin-bottom: 1.5rem;
+}
+
+
+/* =========================================================
+   EXPLORE BUTTON
+========================================================= */
+
+.storiesExploreButton {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: .7rem;
+
+  padding: .65rem 1rem;
+
+  border: 1px solid #d8d5df;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  font-size: .55rem;
+
+  font-weight: 600;
+
+  color: #15151a;
+
+  transition:
+    transform .3s ease,
+    background-color .3s ease;
+}
+
+
+.storiesExploreButton i {
+  font-size: .5rem;
+
+  transition:
+    transform .3s ease;
+}
+
+
+.storiesExploreButton:hover {
+  transform: translateY(-2px);
+
+  background: #ffffff;
+}
+
+
+.storiesExploreButton:hover i {
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   RIGHT
+========================================================= */
+
+.storiesBottomRight {
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+/* =========================================================
+   MINI STORY
+========================================================= */
+
+.storiesMiniCard {
+  display: grid;
+
+  grid-template-columns: 4.5rem 1fr auto;
+
+  align-items: center;
+
+  gap: .8rem;
+
+  min-height: 4.5rem;
+
+  padding: .45rem 0;
+
+  border-bottom: 1px solid #dfdce5;
+
+  text-decoration: none;
+
+  transition:
+    transform .3s ease;
+}
+
+
+.storiesMiniCard:first-of-type {
+  border-top: 1px solid #dfdce5;
+}
+
+
+.storiesMiniCard:hover {
+  transform: translateX(5px);
+}
+
+
+/* =========================================================
+   MINI IMAGE
+========================================================= */
+
+.storiesMiniImage {
+  width: 4.5rem;
+  height: 3.2rem;
+
+  overflow: hidden;
+
+  border-radius: .4rem;
+
+  background: #ddd3ff;
+}
+
+
+.storiesMiniImage img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform .5s ease;
+}
+
+
+.storiesMiniCard:hover
+.storiesMiniImage img {
+  transform: scale(1.06);
+}
+
+
+/* =========================================================
+   MINI TEXT
+========================================================= */
+
+.storiesMiniText span {
+  display: block;
+
+  margin-bottom: .25rem;
+
+  font-size: .42rem;
+
+  font-weight: 700;
+
+  letter-spacing: .08em;
+
+  color: #8a8590;
+}
+
+
+.storiesMiniText h4 {
+  margin: 0;
+
+  font-size: .62rem;
+
+  line-height: 1;
+
+  font-weight: 700;
+
+  letter-spacing: -.02em;
+
+  color: #15151a;
+}
+
+
+/* MINI ARROW */
+
+.storiesMiniCard > i {
+  font-size: .5rem;
+
+  color: #15151a;
+
+  transition:
+    transform .3s ease;
+}
+
+
+.storiesMiniCard:hover > i {
+  transform: translate(2px, -2px);
+}
+
+
+/* =========================================================
+   INTERSECTION OBSERVER
+========================================================= */
+
+.storiesReveal {
+  opacity: 0;
+
+  transform: translateY(35px);
+
+  transition:
+    opacity .8s ease,
+    transform .8s cubic-bezier(.2, .7, .2, 1);
+}
+
+
+.storiesReveal.is-visible {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  #stories {
+    padding: 6rem 6vw 5rem;
+  }
+
+
+  .storiesHeroVisual {
+    height: 28rem;
+  }
+
+
+  .storiesBottom {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 3rem;
+  }
+
+
+  .storiesBottomRight {
+    grid-column: 1 / -1;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  #stories {
+    padding: 5rem 1.2rem 4rem;
+  }
+
+
+  .storiesHeroVisual {
+    height: 25rem;
+
+    grid-template-columns:
+      .8fr
+      1fr
+      1fr;
+  }
+
+
+  .storiesHeroText {
+    left: 1.2rem;
+    bottom: 1.2rem;
+  }
+
+
+  .storiesHeroText h2 {
+    font-size: clamp(
+      3rem,
+      15vw,
+      5rem
+    );
+  }
+
+
+  .storiesBottom {
+    grid-template-columns: 1fr;
+
+    gap: 2.5rem;
+
+    padding-top: 2rem;
+  }
+
+
+  .storiesBottomRight {
+    grid-column: auto;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  #stories {
+    padding-inline: 1rem;
+  }
+
+
+  .storiesHeroVisual {
+    height: 21rem;
+  }
+
+
+  .storiesHeroLabel {
+    font-size: .42rem;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .storiesVisualItem img,
+  .storiesExploreButton,
+  .storiesExploreButton i,
+  .storiesMiniCard,
+  .storiesMiniImage img,
+  .storiesMiniCard > i,
+  .storiesReveal {
+    transition: none;
+  }
+
+}

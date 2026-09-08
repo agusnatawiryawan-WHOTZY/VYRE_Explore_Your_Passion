@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VYRE Catalog | Explore Gear</title>
+    <meta name="description" content="Temukan koleksi gear VYRE untuk fashion, gaming, dan sport.">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="assets/vyre-favicon-light.svg" type="image/svg+xml" media="(prefers-color-scheme: light)">
+    <link rel="icon" href="assets/vyre-favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0..1,0..200">
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/cart.css" />
+    <link rel="stylesheet" href="css/loader.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/catalog.css" />
+  </head>
+  <body class="shopPage catalogPage">
+    <div class="pageLoader" id="pageLoader" aria-label="Loading VYRE" role="status">
+      <div class="pageLoaderPanel">
+        <div class="loaderBrand"><span>VYRE // SYSTEM</span><span>PLAYER 01</span></div>
+        <div class="loaderCore"><span class="loaderCrosshair"></span></div>
+        <h1 class="loaderTitle">ENTER YOUR WORLD</h1>
+        <p class="loaderStatus" id="loaderStatus">BOOTING VYRE CORE</p>
+        <div class="loaderTrack"><div class="loaderProgress" id="loaderProgress"></div></div>
+        <div class="loaderMeta"><span>Loading experience</span><span>2026</span></div>
+      </div>
+    </div>
+    <header class="shopHeader">
+      <a class="shopBrand" href="index.html">VYRE</a>
+      <nav class="catalogMainNav" aria-label="Main navigation">
+        <a href="index.html#hero">Explore</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#passion">Passions</a>
+        <a href="index.html#stories">Stories</a>
+        <a href="index.html#faq">FAQ</a>
+        <a class="catalogNavActive" href="catalog.html">Catalog</a>
+        <a class="catalogCartLink" href="cart.html">Cart <span id="catalogCartCount">0</span></a>
+      </nav>
+    </header>
+    <main class="catalogMain">
+      <div class="catalogIntro">
+        <div>
+          <p class="shopEyebrow">VYRE / LOADOUT</p>
+          <h1>Find your<br /><em>next move.</em></h1>
+        </div>
+        <p class="catalogDescription">Gear for the way you move, play, and make your world your own.</p>
+      </div>
+      <div class="catalogToolbar">
+        <div class="catalogFilters" role="group" aria-label="Filter products">
+          <button class="catalogFilter is-active" type="button" data-filter="ALL">All gear</button>
+          <button class="catalogFilter" type="button" data-filter="FASHION">Fashion</button>
+          <button class="catalogFilter" type="button" data-filter="GAMING">Gaming</button>
+          <button class="catalogFilter" type="button" data-filter="SPORT">Sport</button>
+        </div>
+        <span id="catalogResultCount">8 PRODUCTS</span>
+      </div>
+      <section class="catalogGrid" id="catalogGrid" aria-live="polite"></section>
+    </main>
+    <div id="catalogToast" class="shopToast" role="status"></div>
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script src="js/smooth-scroll.js"></script>
+    <script src="js/parallax.js"></script>
+    <script src="js/catalog.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/page-loader.js"></script>
+  </body>
+</html>

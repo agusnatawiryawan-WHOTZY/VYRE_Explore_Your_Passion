@@ -1,0 +1,10 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const users = () => JSON.parse(localStorage.getItem("vyreUsers") || "[]");
+  const saveUsers = (value) => localStorage.setItem("vyreUsers", JSON.stringify(value));
+  const message = document.querySelector("#authMessage");
+  const redirect = new URLSearchParams(window.location.search).get("redirect") || "marketplace.html";
+  const setMessage = (text, error = false) => { message.textContent = text; message.className = `authMessage ${error ? "is-error" : "is-success"}`; };
+  document.querySelectorAll("[data-auth-tab]").forEach((tab) => tab.addEventListener("click", () => { document.querySelectorAll("[data-auth-tab]").forEach((item) => item.classList.toggle("is-active", item === tab)); document.querySelector("#loginForm").hidden = tab.dataset.authTab !== "login"; document.querySelector("#registerForm").hidden = tab.dataset.authTab !== "register"; message.textContent = ""; }));
+  document.querySelector("#registerForm").addEventListener("submit", (event) => { event.preventDefault(); const name = document.querySelector("#registerName").value.trim(); const email = document.querySelector("#registerEmail").value.trim().toLowerCase(); const password = document.querySelector("#registerPassword").value; const list = users(); if (list.some((user) => user.email === email)) return setMessage("Email sudah terdaftar. Silakan login.", true); const user = { name, email, password, joinedAt: new Date().toISOString() }; list.push(user); saveUsers(list); localStorage.setItem("vyreCurrentUser", JSON.stringify({ name, email })); window.location.href = redirect; });
+  document.querySelector("#loginForm").addEventListener("submit", (event) => { event.preventDefault(); const email = document.querySelector("#loginEmail").value.trim().toLowerCase(); const password = document.querySelector("#loginPassword").value; const user = users().find((item) => item.email === email && item.password === password); if (!user) return setMessage("Email atau password belum sesuai.", true); localStorage.setItem("vyreCurrentUser", JSON.stringify({ name: user.name, email: user.email })); window.location.href = redirect; });
+});

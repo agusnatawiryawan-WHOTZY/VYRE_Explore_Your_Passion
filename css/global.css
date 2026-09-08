@@ -1,0 +1,508 @@
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+html{
+   scroll-behavior: smooth;
+}
+body{
+   font-family: var(--font-body);
+   overflow-x: hidden;
+}
+body.mobile-nav-open{
+   overflow: hidden;
+}
+:root {
+    /* =========================================================
+       1. FONT FAMILY
+       ========================================================= */
+
+    --font-display: "Syne", sans-serif;
+    --font-ui: "Manrope", sans-serif;
+    --font-body: "Inter", sans-serif;
+     --font-pixel: "Silkscreen", sans-serif;
+
+
+    /* =========================================================
+       2. FONT WEIGHT
+       ========================================================= */
+
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+    --fw-extrabold: 800;
+
+     --footer-bg: #101011;
+  --footer-text: #f5f4f7;
+  --footer-muted: #aaa7b0;
+  --footer-purple: #9d83d2;
+  --footer-border: rgba(255, 255, 255, 0.25);
+  --footer-max-width: 1120px;
+    /* =========================================================
+       3. FONT SIZE — DISPLAY
+       Syne
+       ========================================================= */
+
+    --fs-display-xxl: clamp(3.5rem, 7vw, 8.5rem);
+    --fs-display-xl: clamp(3rem, 6vw, 7rem);
+    --fs-display-lg: clamp(2.75rem, 5vw, 6rem);
+    --fs-display-md: clamp(2.5rem, 4.2vw, 4.5rem);
+    --fs-display-sm: clamp(2rem, 3.2vw, 3.5rem);
+
+
+    /* =========================================================
+       4. FONT SIZE — HEADING
+       Syne
+       ========================================================= */
+
+    --fs-h1: clamp(2.25rem, 4vw, 4.5rem);
+    --fs-h2: clamp(2rem, 3.2vw, 3.5rem);
+    --fs-h3: clamp(1.65rem, 2.4vw, 2.5rem);
+    --fs-h4: clamp(1.4rem, 1.8vw, 2rem);
+    --fs-h5: clamp(1.2rem, 1.5vw, 1.5rem);
+    --fs-h6: clamp(1.05rem, 1.25vw, 1.25rem);
+
+
+    /* =========================================================
+       5. FONT SIZE — BODY
+       Inter
+       ========================================================= */
+
+    --fs-body-xl: clamp(1.125rem, 1.4vw, 1.375rem);
+    --fs-body-lg: clamp(1rem, 1.2vw, 1.125rem);
+    --fs-body-md: clamp(0.9375rem, 1vw, 1rem);
+    --fs-body-sm: clamp(0.8125rem, 0.9vw, 0.9375rem);
+    --fs-body-xs: clamp(0.6875rem, 0.75vw, 0.8125rem);
+
+
+    /* =========================================================
+       6. FONT SIZE — UI
+       Manrope
+       ========================================================= */
+
+    --fs-nav: clamp(0.75rem, 0.85vw, 0.875rem);
+    --fs-button: clamp(0.75rem, 0.9vw, 0.875rem);
+    --fs-label: clamp(0.6875rem, 0.75vw, 0.8125rem);
+    --fs-caption: clamp(0.625rem, 0.7vw, 0.75rem);
+
+
+    /* =========================================================
+       7. FONT SIZE — PRODUCT
+       ========================================================= */
+
+    --fs-product-name: clamp(1rem, 1.25vw, 1.25rem);
+    --fs-product-category: clamp(0.6875rem, 0.75vw, 0.8125rem);
+    --fs-product-price: clamp(1rem, 1.2vw, 1.125rem);
+    --fs-product-old-price: clamp(0.75rem, 0.9vw, 0.875rem);
+
+
+    /* =========================================================
+       8. FONT SIZE — HERO
+       ========================================================= */
+
+    --fs-hero-eyebrow: clamp(0.6875rem, 0.8vw, 0.8125rem);
+    --fs-hero-title: clamp(3rem, 7vw, 8rem);
+    --fs-hero-description: clamp(0.875rem, 1vw, 1.125rem);
+    --fs-hero-price: clamp(1.75rem, 2.8vw, 3.25rem);
+
+
+    /* =========================================================
+       9. FONT SIZE — SECTION
+       ========================================================= */
+
+    --fs-section-eyebrow: clamp(0.6875rem, 0.8vw, 0.8125rem);
+    --fs-section-title: clamp(2.25rem, 4.5vw, 5rem);
+    --fs-section-description: clamp(0.9375rem, 1vw, 1.125rem);
+
+
+    /* =========================================================
+       10. FONT SIZE — FAQ
+       ========================================================= */
+
+    --fs-faq-question: clamp(1.125rem, 1.7vw, 1.5rem);
+    --fs-faq-answer: clamp(0.875rem, 1vw, 1rem);
+    --fs-faq-number: clamp(0.6875rem, 0.8vw, 0.8125rem);
+
+
+    /* =========================================================
+       11. FONT SIZE — FOOTER
+       ========================================================= */
+
+    --fs-footer-brand: clamp(5rem, 16vw, 16rem);
+    --fs-footer-heading: clamp(0.75rem, 0.9vw, 0.875rem);
+    --fs-footer-link: clamp(0.75rem, 0.9vw, 0.875rem);
+    --fs-footer-small: clamp(0.6875rem, 0.8vw, 0.8125rem);
+
+
+    /* =========================================================
+       12. ICON SIZE — RESPONSIVE
+       ========================================================= */
+
+    --icon-xs: clamp(0.75rem, 0.9vw, 0.875rem);
+    --icon-sm: clamp(0.875rem, 1vw, 1rem);
+    --icon-md: clamp(1rem, 1.25vw, 1.25rem);
+    --icon-lg: clamp(1.25rem, 1.6vw, 1.5rem);
+    --icon-xl: clamp(1.5rem, 2vw, 2rem);
+    --icon-2xl: clamp(2rem, 3vw, 3rem);
+
+    /* Arrow / decorative icon */
+    --icon-arrow: clamp(1rem, 1.35vw, 1.375rem);
+
+    /* Social icons */
+    --icon-social: clamp(1.125rem, 1.5vw, 1.5rem);
+
+
+    /* =========================================================
+       13. LINE HEIGHT
+       ========================================================= */
+
+    --lh-tight: 0.95;
+    --lh-display: 1;
+    --lh-heading: 1.1;
+    --lh-body: 1.6;
+    --lh-relaxed: 1.75;
+
+
+    /* =========================================================
+       14. LETTER SPACING
+       ========================================================= */
+
+    --ls-tight: -0.04em;
+    --ls-display: -0.035em;
+    --ls-heading: -0.02em;
+    --ls-normal: 0;
+    --ls-wide: 0.04em;
+    --ls-uppercase: 0.08em;
+
+
+    /* =========================================================
+       15. COLORS — BASE
+       ========================================================= */
+
+    --color-white: #ffffff;
+    --color-warm-white: #f5f4f0;
+    --color-dark: #111111;
+    --color-dark-secondary: #242424;
+
+  
+    /* =========================================================
+       16. COLORS — TEXT
+       ========================================================= */
+
+    --color-text-primary: #111111;
+    --color-text-secondary: #6b6b67;
+    --color-text-muted: #999994;
+    --color-text-disabled: #b8b7b1;
+    --color-text-inverse: #ffffff;
+
+
+    /* =========================================================
+       17. COLORS — BORDER
+       ========================================================= */
+
+    --color-border-subtle: #efeee9;
+    --color-border-default: #e5e4df;
+    --color-border-strong: #d4d3ce;
+    --color-border-dark: #333333;
+
+
+    /* =========================================================
+       18. COLORS — BRAND
+       ========================================================= */
+
+   --color-brand-primary: #7c3aed;
+   --color-brand-secondary: #c4b5fd;
+
+    /* darker orange for hover */
+   --color-brand-hover: #5b21b6;
+
+    /* soft accent background */
+   --color-brand-soft: #f3efff;
+
+
+    /* =========================================================
+       19. COLORS — SURFACE
+       ========================================================= */
+
+    --color-surface-primary: #ffffff;
+    --color-surface-secondary: #f5f4f0;
+    --color-surface-tertiary: #efeee9;
+    --color-surface-dark: #111111;
+    --color-surface-dark-secondary: #242424;
+    --color-surface-elevated: #ffffff;
+
+
+    /* =========================================================
+       20. COLORS — NAVIGATION
+       ========================================================= */
+
+    --nav-bg: rgba(255, 255, 255, 0.86);
+    --nav-text: #111111;
+    --nav-text-muted: #6b6b67;
+    --nav-border: #e5e4df;
+    --nav-hover: #f5f4f0;
+   --nav-active: #7c3aed;
+
+
+    /* =========================================================
+       21. COLORS — BUTTON
+       ========================================================= */
+
+    --btn-primary-bg: #111111;
+    --btn-primary-text: #ffffff;
+   --btn-primary-hover: #7c3aed;
+
+    --btn-secondary-bg: #ffffff;
+    --btn-secondary-text: #111111;
+    --btn-secondary-border: #e5e4df;
+    --btn-secondary-hover: #f5f4f0;
+
+   --btn-accent-bg: #7c3aed;
+    --btn-accent-text: #ffffff;
+   --btn-accent-hover: #5b21b6;
+
+    --btn-disabled-bg: #e5e4df;
+    --btn-disabled-text: #999994;
+
+
+    /* =========================================================
+       22. COLORS — INPUT
+       ========================================================= */
+
+    --input-bg: #ffffff;
+    --input-bg-filled: #f5f4f0;
+    --input-border: #e5e4df;
+   --input-border-focus: #7c3aed;
+    --input-text: #111111;
+    --input-placeholder: #999994;
+    --input-icon: #6b6b67;
+    --input-disabled-bg: #eceae5;
+    --input-disabled-text: #b8b7b1;
+
+
+    /* =========================================================
+       23. COLORS — PRODUCT
+       ========================================================= */
+
+    --product-name: #111111;
+    --product-category: #6b6b67;
+    --product-price: #111111;
+    --product-old-price: #999994;
+    --product-image-bg: #f5f4f0;
+    --product-wishlist: #111111;
+    --product-sale: #ff6b2c;
+
+
+    /* =========================================================
+       24. COLORS — CATEGORY
+       No separate category colors.
+       VYRE uses a unified visual system.
+       ========================================================= */
+
+    --category-fashion: #111111;
+    --category-sport: #111111;
+    --category-gaming: #ffffff;
+    --category-accent: #ff6b2c;
+
+
+    /* =========================================================
+       25. COLORS — STATUS
+       ========================================================= */
+
+    --color-success: #4f8f63;
+    --color-success-soft: #edf6ef;
+
+    --color-warning: #d99332;
+    --color-warning-soft: #fff5e5;
+
+    --color-error: #c94f4f;
+    --color-error-soft: #fceeee;
+
+    --color-info: #5977a8;
+    --color-info-soft: #edf2f8;
+
+
+    /* =========================================================
+       26. COLORS — OVERLAY
+       ========================================================= */
+
+    --overlay-light: rgba(17, 17, 17, 0.04);
+    --overlay-medium: rgba(17, 17, 17, 0.12);
+    --overlay-strong: rgba(17, 17, 17, 0.4);
+
+    --overlay-white-light: rgba(255, 255, 255, 0.08);
+    --overlay-white-medium: rgba(255, 255, 255, 0.15);
+    --overlay-white-strong: rgba(255, 255, 255, 0.35);
+
+
+    /* =========================================================
+       27. GLASS EFFECT
+       ========================================================= */
+
+    --glass-bg: rgba(255, 255, 255, 0.65);
+    --glass-border: rgba(255, 255, 255, 0.55);
+    --glass-blur: 16px;
+
+
+    /* =========================================================
+       28. SPACING — RESPONSIVE
+       ========================================================= */
+
+    --space-2: clamp(0.125rem, 0.2vw, 0.25rem);
+    --space-4: clamp(0.25rem, 0.3vw, 0.375rem);
+    --space-8: clamp(0.5rem, 0.6vw, 0.75rem);
+    --space-12: clamp(0.75rem, 0.8vw, 1rem);
+    --space-16: clamp(1rem, 1vw, 1.25rem);
+    --space-20: clamp(1.25rem, 1.3vw, 1.5rem);
+    --space-24: clamp(1.5rem, 1.6vw, 1.75rem);
+    --space-32: clamp(2rem, 2.2vw, 2.5rem);
+    --space-40: clamp(2.5rem, 2.8vw, 3rem);
+    --space-48: clamp(3rem, 3.5vw, 4rem);
+    --space-64: clamp(4rem, 4.5vw, 5rem);
+    --space-80: clamp(5rem, 5.5vw, 6.5rem);
+    --space-96: clamp(6rem, 6.5vw, 8rem);
+    --space-128: clamp(8rem, 8vw, 10rem);
+    --space-160: clamp(10rem, 10vw, 13rem);
+
+
+    /* =========================================================
+       29. CONTAINER
+       ========================================================= */
+
+    --container-max: 1320px;
+    --container-width: min(100% - clamp(2rem, 8vw, 8rem), var(--container-max));
+
+
+    /* =========================================================
+       30. SECTION SPACING
+       ========================================================= */
+
+    --section-padding-y: clamp(5rem, 10vw, 10rem);
+    --section-gap: clamp(3rem, 6vw, 6rem);
+
+
+    /* =========================================================
+       31. NAVBAR
+       ========================================================= */
+
+    --nav-height: clamp(4rem, 5vw, 5rem);
+    --nav-padding-x: clamp(1rem, 4vw, 4rem);
+    --nav-radius: 999px;
+
+
+    /* =========================================================
+       32. BUTTON
+       ========================================================= */
+
+    --btn-height: clamp(2.75rem, 3.5vw, 3.25rem);
+    --btn-padding-x: clamp(1.25rem, 2vw, 1.75rem);
+    --btn-radius: 999px;
+
+
+    /* =========================================================
+       33. INPUT
+       ========================================================= */
+
+    --input-height: clamp(2.75rem, 3.5vw, 3.25rem);
+    --input-padding-x: clamp(0.875rem, 1.5vw, 1.25rem);
+    --input-radius: 999px;
+
+
+    /* =========================================================
+       34. RADIUS
+       ========================================================= */
+
+    --radius-none: 0;
+    --radius-xs: 4px;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-2xl: 32px;
+    --radius-pill: 999px;
+
+
+    /* =========================================================
+       35. STROKE
+       ========================================================= */
+
+    --stroke-thin: 1px;
+    --stroke-medium: 2px;
+
+
+    /* =========================================================
+       36. SHADOW
+       ========================================================= */
+
+    --shadow-sm:
+        0 4px 16px rgba(17, 17, 17, 0.04);
+
+    --shadow-md:
+        0 10px 30px rgba(17, 17, 17, 0.06);
+
+    --shadow-lg:
+        0 20px 60px rgba(17, 17, 17, 0.09);
+
+    --shadow-xl:
+        0 30px 90px rgba(17, 17, 17, 0.12);
+
+
+    /* =========================================================
+       37. TRANSITIONS
+       ========================================================= */
+
+    --transition-fast: 180ms ease;
+    --transition-normal: 300ms ease;
+    --transition-slow: 500ms ease;
+    --transition-image: 700ms cubic-bezier(0.22, 1, 0.36, 1);
+
+     /* FASHION — Rose / Pink */
+    --color-fashion: rgba(255, 182, 193, 1);
+    --color-fashion-light: rgba(255, 182, 193, 0.15);
+    --color-fashion-soft: rgba(255, 182, 193, 0.35);
+    --color-fashion-dark: rgba(214, 120, 138, 1);
+
+
+    /* SPORT — Blue */
+    --color-sport: rgba(137, 181, 255, 1);
+    --color-sport-light: rgba(137, 181, 255, 0.15);
+    --color-sport-soft: rgba(137, 181, 255, 0.35);
+    --color-sport-dark: rgba(67, 120, 205, 1);
+
+
+    /* GAMING — Purple */
+    --color-gaming: rgba(184, 155, 255, 1);
+    --color-gaming-light: rgba(184, 155, 255, 0.15);
+    --color-gaming-soft: rgba(184, 155, 255, 0.35);
+    --color-gaming-dark: rgba(126, 91, 205, 1);
+
+   /* =========================================================
+      38. MARKETPLACE
+      ========================================================= */
+
+   --market-bg: #fafafa;
+   --market-surface: #ffffff;
+   --market-ink: #15151a;
+   --market-muted: #686873;
+   --market-line: #e6e4eb;
+   --market-accent: #7c3aed;
+   --market-accent-soft: #f3efff;
+   --market-search-height: clamp(3rem, 4vw, 3.6rem);
+   --market-content-width: min(100% - clamp(2rem, 7vw, 7rem), 82rem);
+}
+
+img, svg, video {
+   max-width: 100%;
+}
+
+button, input, select, textarea {
+   max-width: 100%;
+}
+
+@media (max-width: 480px) {
+   html {
+      overflow-x: hidden;
+   }
+}

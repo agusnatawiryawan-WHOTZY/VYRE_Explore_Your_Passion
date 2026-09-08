@@ -1,0 +1,1667 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="VYRE adalah ruang untuk fashion, gaming, sport, dan gear yang mengikuti passion kamu." />
+    <meta name="robots" content="index, follow" />
+    <title>VYRE</title>
+    <link
+      rel="icon"
+      href="assets/vyre-favicon-light.svg"
+      type="image/svg+xml"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      rel="icon"
+      href="assets/vyre-favicon-dark.svg"
+      type="image/svg+xml"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Press+Start+2P&family=Silkscreen:wght@400;700&family=Syne:wght@400..800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Library googlefont -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/hero.css" />
+    <link rel="stylesheet" href="css/about.css" />
+    <link rel="stylesheet" href="css/passion.css" />
+    <link rel="stylesheet" href="css/stories.css" />
+    <link rel="stylesheet" href="css/faq.css" />
+    <link rel="stylesheet" href="css/cta.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/purchase.css" />
+    <link rel="stylesheet" href="css/cart.css" />
+    <link rel="stylesheet" href="css/ai-chat.css" />
+    <link rel="stylesheet" href="css/loader.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div
+      class="pageLoader"
+      id="pageLoader"
+      aria-label="Loading VYRE"
+      role="status"
+    >
+      <div class="pageLoaderPanel">
+        <div class="loaderBrand">
+          <span>VYRE // SYSTEM</span><span>PLAYER 01</span>
+        </div>
+        <div class="loaderCore"><span class="loaderCrosshair"></span></div>
+        <h1 class="loaderTitle">ENTER YOUR WORLD</h1>
+        <p class="loaderStatus" id="loaderStatus">BOOTING VYRE CORE</p>
+        <div class="loaderTrack">
+          <div class="loaderProgress" id="loaderProgress"></div>
+        </div>
+        <div class="loaderMeta">
+          <span>Loading experience</span><span>2026</span>
+        </div>
+      </div>
+    </div>
+    <div class="overlayNavMobile"></div>
+    <div class="vyreAiWidget" id="vyreAiWidget" aria-live="polite">
+      <button
+        class="vyreAiToggle"
+        id="vyreAiToggle"
+        type="button"
+        aria-label="Open VYRE AI assistant"
+        aria-expanded="false"
+      >
+        <img src="assets/vyreLogo-removebg-preview.png" alt="VYRE AI" />
+        <span class="vyreAiStatusDot"></span>
+      </button>
+      <section
+        class="vyreAiPanel"
+        id="vyreAiPanel"
+        aria-labelledby="vyreAiTitle"
+      >
+        <div class="vyreAiHeader">
+          <div class="vyreAiIdentity">
+            <img src="assets/vyreLogo-removebg-preview.png" alt="" />
+            <div>
+              <p>VYRE AI</p>
+              <span>PANDUAN PRODUK / ONLINE</span>
+            </div>
+          </div>
+          <button
+            class="vyreAiClose"
+            id="vyreAiClose"
+            type="button"
+            aria-label="Close VYRE AI assistant"
+          >
+            ×
+          </button>
+        </div>
+        <div class="vyreAiIntro">
+          <p class="vyreAiEyebrow">PANDUAN LOADOUT PRIBADI</p>
+          <h2 id="vyreAiTitle">Mau cari apa?</h2>
+          <p>Tanyakan produk VYRE untuk gaming dan olahraga.</p>
+        </div>
+        <div class="vyreAiMessages" id="vyreAiMessages" aria-live="polite">
+          <div class="vyreAiMessage vyreAiMessageBot">
+            Halo, Player. Saya bisa membantu memilih gear yang paling cocok
+            untukmu.
+          </div>
+          <div class="vyreAiQuickPrompts" aria-label="Pertanyaan cepat">
+            <button
+              type="button"
+              data-ai-prompt="Headset mana yang cocok untuk gaming?"
+            >
+              Headset gaming
+            </button>
+            <button type="button" data-ai-prompt="Berapa harga controller?">
+              Cek harga controller
+            </button>
+            <button type="button" data-ai-prompt="Saya butuh sepatu untuk lari">
+              Rekomendasi sport
+            </button>
+          </div>
+        </div>
+        <form class="vyreAiForm" id="vyreAiForm">
+          <label class="srOnly" for="vyreAiInput">Tanya VYRE AI</label>
+          <input
+            id="vyreAiInput"
+            type="text"
+            placeholder="Tanya tentang produk..."
+            autocomplete="off"
+            required
+          />
+          <button type="submit" aria-label="Kirim pertanyaan">↑</button>
+        </form>
+      </section>
+    </div>
+
+    <nav id="navBarMain">
+      <div class="container__flexNavDeks">
+        <div class="logoNav">
+          <img src="assets/vyreLogo-removebg-preview.png" alt="VYRE_LOGO" />
+          <h3>VYRE</h3>
+        </div>
+
+        <nav id="navDekstop">
+          <div class="container__ulDekstop">
+            <ul>
+              <li><a href="#cta">Explore</a></li>
+              <li><a href="#about"> About </a></li>
+              <li>
+                <button type="button" id="btnPassionDropDeks">Passions</button>
+              </li>
+              <li><a href="#stories"> Stories </a></li>
+              <li><a href="#faq">FAQ</a></li>
+              <li><a href="marketplace.html">Marketplace</a></li>
+              <li>
+                <a href="cart.html" class="navCartLink"
+                  >Cart <span id="cartCount">0</span></a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="container__dropDownPassionDeks">
+            <ul>
+              <li>
+                <button
+                  type="button"
+                  class="btnPassionsDeks"
+                  id="btnPassionsFashion"
+                  data-page-target="marketplace.html?category=FASHION"
+                >
+                  <div class="container__textDropDownPassionDeks">
+                    <div class="container__textFlexDropDownPassionDeks">
+                      <h5>01.</h5>
+                      <h4>Fashion</h4>
+                    </div>
+                    <p>Express your style</p>
+                  </div>
+                  <span
+                    class="material-symbols-rounded iconDropDownDeks"
+                  >
+                    arrow_right_alt
+                  </span>
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  class="btnPassionsDeks"
+                  id="btnPassionsSport"
+                  data-page-target="marketplace.html?category=SPORT"
+                >
+                  <div class="container__textDropDownPassionDeks">
+                    <div class="container__textFlexDropDownPassionDeks">
+                      <h5>02.</h5>
+                      <h4>Sport</h4>
+                    </div>
+                    <p>Find your momentum</p>
+                  </div>
+                  <span
+                    class="material-symbols-rounded iconDropDownDeks"
+                  >
+                    arrow_right_alt
+                  </span>
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  class="btnPassionsDeks"
+                  id="btnPassionsGaming"
+                  data-page-target="marketplace.html?category=GAMING"
+                >
+                  <div class="container__textDropDownPassionDeks">
+                    <div class="container__textFlexDropDownPassionDeks">
+                      <h5>03.</h5>
+                      <h4>Gaming</h4>
+                    </div>
+                    <p>Play your way</p>
+                  </div>
+                  <span
+                    class="material-symbols-rounded iconDropDownDeks"
+                  >
+                    arrow_right_alt
+                  </span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <aside
+          class="containerNavMobile"
+          id="containerNavMobile"
+          data-lenis-prevent
+        >
+          <div class="container__headerNavmobile">
+            <div class="container__flexHeader">
+              <div class="logoNavmobile">
+                <img
+                  src="assets/vyreLogo-removebg-preview.png"
+                  alt="VYRE LOGO"
+                />
+                <h2 class="namaLogo">VYRE</h2>
+              </div>
+              <button id="closeNavMobile">
+                <span class="material-symbols-rounded"> close </span>
+              </button>
+            </div>
+            <nav id="navMobile">
+              <ul>
+                <li>
+                  <a href="#hero">
+                    Explore
+                    <span class="material-symbols-rounded">
+                      arrow_forward
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#about">
+                    About
+                    <span class="material-symbols-rounded">
+                      arrow_forward
+                    </span>
+                  </a>
+                </li>
+                <div class="container__dropDownMenu">
+                  <li>
+                    <button
+                      class="btnToDropDown"
+                      id="btnToDropDownMobilePassion"
+                    >
+                      <h4>Passions</h4>
+                      <span class="material-symbols-rounded">
+                        arrow_drop_down
+                      </span>
+                    </button>
+                  </li>
+                  <div class="dropDownMenuMobile">
+                    <button
+                      type="button"
+                      class="btnPassions"
+                      id="btnPassionsFashion"
+                      data-page-target="marketplace.html?category=FASHION"
+                    >
+                      <h5>01</h5>
+                      <span
+                        class="material-symbols-rounded iconPassion"
+                        id="iconPassionsFashion"
+                      >
+                        checkroom
+                      </span>
+                      <div class="container__textExploreDropDown">
+                        <h4>Fashion</h4>
+                        <p>Express your style</p>
+                      </div>
+                    </button>
+
+                    <button
+                      type="button"
+                      class="btnPassions"
+                      id="btnPassionsSport"
+                      data-page-target="marketplace.html?category=SPORT"
+                    >
+                      <h5>02</h5>
+                      <span
+                        class="material-symbols-rounded iconPassion"
+                        id="iconPassionsSports"
+                      >
+                        sprint
+                      </span>
+                      <div class="container__textExploreDropDown">
+                        <h4>Sport</h4>
+                        <p>Find your momentum</p>
+                      </div>
+                    </button>
+
+                    <button
+                      type="button"
+                      class="btnPassions"
+                      id="btnPassionsGaming"
+                      data-page-target="marketplace.html?category=GAMING"
+                    >
+                      <h5>03</h5>
+                      <span
+                        class="material-symbols-rounded iconPassion"
+                        id="iconPassionGaming"
+                      >
+                        stadia_controller
+                      </span>
+                      <div class="container__textExploreDropDown">
+                        <h4>Gaming</h4>
+                        <p>Play your way.</p>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+                <li>
+                  <a href="#stories">
+                    Stories
+                    <span class="material-symbols-rounded">
+                      arrow_forward
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#faq">
+                    FAQ
+                    <span class="material-symbols-rounded">
+                      arrow_forward
+                    </span>
+                  </a>
+                </li>
+                <li><a href="marketplace.html">Marketplace</a></li>
+                <li>
+                  <a href="cart.html" class="navCartLink"
+                    >Cart <span id="cartCountMobile">0</span></a
+                  >
+                </li>
+              </ul>
+
+              <button
+                id="exploreStyleMobile"
+                class="btnExplore"
+                data-page-target="marketplace.html"
+              >
+                <span class="material-symbols-rounded"> star_shine </span>
+                <h4>EXPLORE STYLE</h4>
+              </button>
+            </nav>
+          </div>
+
+          <div class="container__navMobileBottom">
+            <ul
+              class="container__flexNavMobileBottom"
+              id="ulBottomNavMobilePassions"
+            >
+              <li><a href="marketplace.html?category=FASHION">Fashion</a></li>
+              <li><a href="marketplace.html?category=SPORT">Sport</a></li>
+              <li><a href="marketplace.html?category=GAMING">Gaming</a></li>
+            </ul>
+
+            <ul
+              class="container__flexNavMobileBottom"
+              id="ulBottomSosmedNavMobile"
+            >
+              <li>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+              </li>
+              <li>
+                <a href=""><i class="fa-brands fa-tiktok"></i></a>
+              </li>
+              <li>
+                <a href=""><i class="fa-brands fa-square-instagram"></i></a>
+              </li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+
+      <button
+        id="exploreStyle"
+        class="btnExplore"
+        data-page-target="marketplace.html"
+      >
+        <span class="material-symbols-rounded"> star_shine </span>
+        <h4>EXPLORE STYLE</h4>
+      </button>
+
+      <button id="hamburgerNavMobile">
+        <span class="material-symbols-rounded"> dehaze </span>
+      </button>
+    </nav>
+
+    <header id="hero">
+      <div class="container__bgTexHerot">
+        <h1 class="textBgHero">YOUR MOVE</h1>
+      </div>
+
+      <div class="container__textCtaHero">
+        <h1>FIND YOU MOVES. MADE YOUR PASSION.</h1>
+        <button id="ctaBtnHero" data-scroll-target="#passion">Order Now</button>
+      </div>
+
+      <div class="container__fotoProdukHero">
+        <div class="container__swiperHero swiper">
+          <div class="swiper-wrapper">
+            <div
+              class="swiper-slide"
+              data-category="GAMING"
+              data-title="HEAR EVERY MOMENT."
+              data-price="$399.000"
+              data-side-title="FEEL EVERY BEAT."
+              data-description="Immersive sound and lasting comfort for every game, playlist, and late-night session."
+              data-features="Adaptive Sound|Active Noise Cancelling|Hi-Res Audio"
+            >
+              <img src="assets/headset.png" alt="Headshet Gaming" />
+            </div>
+
+            <div
+              class="swiper-slide"
+              data-category="GAMING"
+              data-title="PLAY YOUR WAY."
+              data-price="$299.000"
+              data-side-title="CONTROL THE MOMENT."
+              data-description="Responsive controls and a confident grip designed to keep every move precise."
+              data-features="Precision Control|Ergonomic Grip|Low-Latency Response"
+            >
+              <img src="assets/controller.png" alt="Controller Gaming" />
+            </div>
+
+            <div
+              class="swiper-slide"
+              data-category="SPORT"
+              data-title="RIDE YOUR WAY."
+              data-price="$2.999.000"
+              data-side-title="FIND YOUR MOMENTUM."
+              data-description="A performance bicycle built for smooth commutes, quick turns, and open roads."
+              data-features="Lightweight Frame|Responsive Ride|All-Day Comfort"
+            >
+              <img src="assets/bicycle.png" alt="Bikecycle" />
+            </div>
+
+            <div
+              class="swiper-slide"
+              data-category="SPORT"
+              data-title="MOVE WITH PURPOSE."
+              data-price="$799.000"
+              data-side-title="MAKE EVERY STEP COUNT."
+              data-description="Flexible running shoes with cushioned support for your daily miles and bigger goals."
+              data-features="Cloud Cushioning|Flexible Sole|Breathable Mesh"
+            >
+              <img src="assets/running-shoe.png" alt="Shoes" />
+            </div>
+          </div>
+
+          <div class="swiper-button-prev">
+            <span class="material-symbols-rounded"> keyboard_arrow_left </span>
+          </div>
+          <div class="swiper-button-next">
+            <span class="material-symbols-rounded"> keyboard_arrow_right </span>
+          </div>
+        </div>
+        <div class="roundedFiturProduk">
+          <h4 id="heroFeatureOne">Adaptive Sound</h4>
+        </div>
+        <div class="roundedFiturProduk">
+          <h4 id="heroFeatureTwo">Active Noise Cancelling</h4>
+        </div>
+        <div class="roundedFiturProduk">
+          <h4 id="heroFeatureThree">Hi-Res Audio</h4>
+        </div>
+      </div>
+
+      <div class="container__hargaRigthHero">
+        <div class="cont__hargaHero">
+          <p>Start from</p>
+          <h4 class="hargaHero" id="heroProductPrice">$399.000</h4>
+        </div>
+        <div class="container__fotoHeroRigth">
+          <div class="container__text__fotoHeroRigth">
+            <h5 id="heroSideTitle">FEEL EVERY BEAT.</h5>
+            <p id="heroSideDescription">
+              Immersive sound and lasting comfort for every game, playlist, and
+              late-night session.
+            </p>
+          </div>
+          <div class="container__fotoIllusKegiatanRigth">
+            <img src="assets/kegiatanSepedaanIllus.jpg" alt="Kegiatan" />
+          </div>
+        </div>
+      </div>
+
+      <div class="container__bottomHeader">
+        <div class="container__rounded__bottomHeader">
+          <div class="container__roundedMain">
+            <div class="roundedBottomHead">
+              <h4 id="heroBottomFeatureOne">Active Noise Cancelling</h4>
+            </div>
+
+            <div class="roundedBottomHead">
+              <h4 id="heroBottomFeatureTwo">Hi-Res Audio</h4>
+            </div>
+
+            <div class="roundedBottomHead">
+              <h4 id="heroBottomFeatureThree">Bluetooth 5.4</h4>
+            </div>
+          </div>
+
+          <div class="container__kotakBottomHead">
+            <div class="container__kotakAtasBottomHead"></div>
+            <div class="container__kotakRightBottomHead"></div>
+          </div>
+        </div>
+
+        <div class="containerToNext">
+          <h4>Learn More</h4>
+          <span class="material-symbols-rounded"> arrow_downward_alt </span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="about">
+        <!-- =========================
+       ABOUT LEFT
+  ========================== -->
+        <div class="container__aboutLeft">
+          <!-- TEXT -->
+          <div class="container__textCtaLeft">
+            <div class="container__eyeBrow_about">
+              <div class="container__eyebrowBulat">
+                <div class="bulatTengaheyeBrow"></div>
+              </div>
+
+              <h4>About us</h4>
+            </div>
+
+            <div class="container__textCtaMain">
+              <h2>
+                YOUR PASSION
+                <br />
+                SHOULD FEEL LIKE YOURS.
+              </h2>
+
+              <p>
+                We believe the things you choose are more than objects. They
+                become part of how you live, move, create, and play.
+              </p>
+            </div>
+          </div>
+
+          <!-- =========================
+         ACTIVITY SWIPER
+    ========================== -->
+          <div class="container__swiperAbout swiper">
+            <div class="swiper-wrapper">
+              <!-- 01 -->
+              <div class="swiper-slide swiperSlideAbout">
+                <img
+                  src="assets/kegiatanSepedaanIllus.jpg"
+                  alt="Cycling activity"
+                />
+
+                <div class="aboutSlideInfo">
+                  <span>01</span>
+                  <p>MOVE WITH PURPOSE</p>
+                </div>
+              </div>
+
+              <!-- 02 -->
+              <div class="swiper-slide swiperSlideAbout">
+                <img
+                  src="assets/controllerIlustrasi.png"
+                  alt="Gaming activity"
+                />
+
+                <div class="aboutSlideInfo">
+                  <span>02</span>
+                  <p>PLAY YOUR WAY</p>
+                </div>
+              </div>
+
+              <!-- 03 -->
+              <div class="swiper-slide swiperSlideAbout">
+                <img src="assets/runningIllus.png" alt="Running activity" />
+
+                <div class="aboutSlideInfo">
+                  <span>03</span>
+                  <p>KEEP MOVING</p>
+                </div>
+              </div>
+
+              <!-- 04 -->
+              <div class="swiper-slide swiperSlideAbout">
+                <img
+                  src="assets/gamingHeadSetIllus.png"
+                  alt="Listening activity"
+                />
+
+                <div class="aboutSlideInfo">
+                  <span>04</span>
+                  <p>HEAR YOUR WORLD</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- =========================
+       ABOUT RIGHT
+  ========================== -->
+        <div class="container__aboutRigth">
+          <!-- TOP TEXT -->
+          <div class="aboutRightTop">
+            <span>01</span>
+
+            <p>
+              MORE THAN
+              <br />
+              JUST PRODUCTS.
+            </p>
+          </div>
+
+          <!-- PRODUCT SWIPER -->
+          <div class="aboutProductSwiper swiper">
+            <div class="swiper-wrapper">
+              <!-- PRODUCT 01 -->
+              <div class="swiper-slide aboutProductSlide">
+                <div class="aboutRightImage">
+                  <img src="assets/controller.png" alt="Gaming controller" />
+                </div>
+
+                <div class="aboutRightBottom">
+                  <div>
+                    <span>GAMING</span>
+
+                    <h3>
+                      PLAY
+                      <br />
+                      YOUR WAY.
+                    </h3>
+                  </div>
+
+                  <button
+                    type="button"
+                    class="aboutProductButton"
+                    aria-label="Explore gaming product"
+                  >
+                    <i class="fa-solid fa-arrow-up-right"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- PRODUCT 02 -->
+              <div class="swiper-slide aboutProductSlide">
+                <div class="aboutRightImage">
+                  <img src="assets/headset.png" alt="Gaming headset" />
+                </div>
+
+                <div class="aboutRightBottom">
+                  <div>
+                    <span>GAMING</span>
+
+                    <h3>
+                      HEAR
+                      <br />
+                      EVERY MOMENT.
+                    </h3>
+                  </div>
+
+                  <button
+                    type="button"
+                    class="aboutProductButton"
+                    aria-label="Explore headset product"
+                  >
+                    <i class="fa-solid fa-arrow-up-right"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- PRODUCT 03 -->
+              <div class="swiper-slide aboutProductSlide">
+                <div class="aboutRightImage">
+                  <img src="assets/running-shoe.png" alt="Running shoes" />
+                </div>
+
+                <div class="aboutRightBottom">
+                  <div>
+                    <span>SPORT</span>
+
+                    <h3>
+                      MOVE
+                      <br />
+                      WITH PURPOSE.
+                    </h3>
+                  </div>
+
+                  <button
+                    type="button"
+                    class="aboutProductButton"
+                    aria-label="Explore running shoes"
+                  >
+                    <i class="fa-solid fa-arrow-up-right"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- PRODUCT 04 -->
+              <div class="swiper-slide aboutProductSlide">
+                <div class="aboutRightImage">
+                  <img src="assets/bicycle.png" alt="Bicycle" />
+                </div>
+
+                <div class="aboutRightBottom">
+                  <div>
+                    <span>SPORT</span>
+
+                    <h3>
+                      RIDE
+                      <br />
+                      YOUR WAY.
+                    </h3>
+                  </div>
+
+                  <button
+                    type="button"
+                    class="aboutProductButton"
+                    aria-label="Explore bicycle"
+                  >
+                    <i class="fa-solid fa-arrow-up-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="passion">
+        <div class="passionControllerScene" aria-hidden="true">
+          <div class="passionControllerGlow"></div>
+          <img
+            class="passionControllerBackground"
+            src="assets/controller.png"
+            alt=""
+          />
+        </div>
+        <!-- =====================================================
+       PASSION INTRO
+  ====================================================== -->
+
+        <div class="passionIntro">
+          <!-- LEFT -->
+          <div class="passionIntroLeft">
+            <span class="passionEyebrow"> EXPLORE YOUR PASSION </span>
+
+            <h2>
+              FIND THE THINGS THAT
+              <br />
+              BECOME PART OF YOUR
+              <br />
+              WORLD.
+            </h2>
+          </div>
+
+          <!-- RIGHT -->
+          <div class="passionIntroRight">
+            <p>
+              The things you choose become part of how you live, move, create,
+              and play. Discover products that fit your world and reflect your
+              passion.
+            </p>
+
+            <a href="#" class="passionExploreBtn">
+              <span>EXPLORE NOW</span>
+
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- =====================================================
+       FEATURED VISUALS
+  ====================================================== -->
+
+        <div class="passionFeatured">
+          <!-- FEATURED PRODUCT -->
+          <div class="passionFeaturedProduct">
+            <div class="passionProductImage">
+              <img src="assets/headset.png" alt="Gaming Headset" />
+            </div>
+
+            <div class="passionProductInfo">
+              <span> GAMING </span>
+
+              <span> 01 </span>
+            </div>
+          </div>
+          <!-- LIFESTYLE IMAGE -->
+          <div class="passionLifestyleImage">
+            <img
+              src="assets/org_bermain_game_headset.png"
+              alt="Gaming lifestyle"
+            />
+          </div>
+
+          <!-- PROMOTION -->
+          <div class="passionPromoCard">
+            <div class="passionPromoTop">
+              <span> 25% OFF </span>
+
+              <small> LIMITED OFFER </small>
+            </div>
+
+            <div class="passionPromoContent">
+              <div>
+                <span> YOUR WORLD, YOUR WAY. </span>
+
+                <h3>Find something that feels like you.</h3>
+              </div>
+
+              <div class="passionPromoProduct">
+                <img src="assets/controller.png" alt="Gaming Controller" />
+              </div>
+            </div>
+
+            <button
+              type="button"
+              class="passionPlayButton"
+              aria-label="View promotion"
+            >
+              <i class="fa-solid fa-arrow-up-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- =====================================================
+       PRODUCT TITLE
+  ====================================================== -->
+
+        <div class="passionProductHeading">
+          <h3>Explore Your Passion</h3>
+
+          <a href="#">
+            See All
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- =====================================================
+       HORIZONTAL PRODUCTS
+  ====================================================== -->
+
+        <div class="passionProductList">
+          <!-- 01 -->
+          <a href="#" class="passionProductCard">
+            <div class="passionCardImage">
+              <img src="assets/headset.png" alt="Gaming Headset" />
+            </div>
+
+            <div class="passionCardBottom">
+              <span>GAMING</span>
+
+              <h4>Headset</h4>
+            </div>
+          </a>
+
+          <!-- 02 -->
+          <a href="#" class="passionProductCard">
+            <div class="passionCardImage">
+              <img src="assets/running-shoe.png" alt="Running Shoes" />
+            </div>
+
+            <div class="passionCardBottom">
+              <span>SPORT</span>
+
+              <h4>Running Shoes</h4>
+            </div>
+          </a>
+
+          <!-- 03 -->
+          <a href="#" class="passionProductCard">
+            <div class="passionCardImage">
+              <img src="assets/controller.png" alt="Gaming Controller" />
+            </div>
+
+            <div class="passionCardBottom">
+              <span>GAMING</span>
+
+              <h4>Controller</h4>
+            </div>
+          </a>
+
+          <!-- 04 -->
+          <a href="#" class="passionProductCard">
+            <div class="passionCardImage">
+              <img src="assets/bicycle.png" alt="Bicycle" />
+            </div>
+
+            <div class="passionCardBottom">
+              <span>SPORT</span>
+
+              <h4>Bicycle</h4>
+            </div>
+          </a>
+
+          <!-- 05 -->
+          <a href="#" class="passionProductCard">
+            <div class="passionCardImage">
+              <img src="assets/headset.png" alt="Wireless Headset" />
+            </div>
+
+            <div class="passionCardBottom">
+              <span>GAMING</span>
+
+              <h4>Wireless Headset</h4>
+            </div>
+          </a>
+
+          <!-- 06 -->
+          <a href="#" class="passionProductCard">
+            <div class="passionCardImage">
+              <img src="assets/running-shoe.png" alt="Sport Shoes" />
+            </div>
+
+            <div class="passionCardBottom">
+              <span>SPORT</span>
+
+              <h4>Sport Shoes</h4>
+            </div>
+          </a>
+
+          <!-- 07 -->
+          <a href="#" class="passionProductCard">
+            <div class="passionCardImage">
+              <img src="assets/controller.png" alt="Controller Pro" />
+            </div>
+
+            <div class="passionCardBottom">
+              <span>GAMING</span>
+
+              <h4>Controller Pro</h4>
+            </div>
+          </a>
+
+          <!-- 08 -->
+          <a href="#" class="passionProductCard">
+            <div class="passionCardImage">
+              <img src="assets/bicycle.png" alt="Performance Bicycle" />
+            </div>
+
+            <div class="passionCardBottom">
+              <span>SPORT</span>
+
+              <h4>Performance Bike</h4>
+            </div>
+          </a>
+        </div>
+      </section>
+      <!-- =====================================================
+     STORIES SECTION
+===================================================== -->
+
+      <section id="stories">
+        <!-- ================================
+       MAIN VISUAL
+  ================================= -->
+
+        <div class="storiesHeroVisual">
+          <!-- IMAGE 1 -->
+          <div class="storiesVisualItem storiesVisualOne">
+            <img src="assets/runningIllus.png" alt="Running passion" />
+          </div>
+
+          <!-- IMAGE 2 -->
+          <div class="storiesVisualItem storiesVisualTwo">
+            <img src="assets/kegiatanSepedaanIllus.jpg" alt="Cycling passion" />
+          </div>
+
+          <!-- IMAGE 3 -->
+          <div class="storiesVisualItem storiesVisualThree">
+            <img src="assets/controllerIlustrasi.png" alt="Gaming passion" />
+          </div>
+
+          <!-- DARK OVERLAY -->
+          <div class="storiesVisualOverlay"></div>
+
+          <!-- MAIN TEXT -->
+          <div class="storiesHeroText">
+            <span>FROM PASSION</span>
+
+            <h2>TO VYRE.</h2>
+          </div>
+
+          <!-- SMALL LABEL -->
+          <div class="storiesHeroLabel">
+            <span>VYRE / 2026</span>
+
+            <span>YOUR WORLD</span>
+          </div>
+        </div>
+
+        <!-- ================================
+       LOWER CONTENT
+  ================================= -->
+
+        <div class="storiesBottom">
+          <!-- LEFT -->
+          <div class="storiesBottomLeft">
+            <span class="storiesSmallLabel"> WHY VYRE? </span>
+
+            <h3>
+              PRODUCTS
+              <br />
+              WITH PURPOSE.
+            </h3>
+
+            <p>
+              We bring products together around the things people love to do, so
+              every choice feels more personal.
+            </p>
+          </div>
+
+          <!-- CENTER -->
+          <div class="storiesBottomCenter">
+            <span class="storiesSmallLabel"> YOUR PASSION </span>
+
+            <h3>
+              YOUR WORLD
+              <br />
+              STARTS HERE.
+            </h3>
+
+            <a href="#" class="storiesExploreButton">
+              <span>EXPLORE VYRE</span>
+
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <!-- RIGHT -->
+          <div class="storiesBottomRight">
+            <span class="storiesSmallLabel"> FROM THE COMMUNITY </span>
+
+            <!-- MINI STORY 1 -->
+            <a href="#" class="storiesMiniCard">
+              <div class="storiesMiniImage">
+                <img src="assets/runningIllus.png" alt="Running" />
+              </div>
+
+              <div class="storiesMiniText">
+                <span>SPORT</span>
+
+                <h4>FIND YOUR MOMENTUM.</h4>
+              </div>
+
+              <i class="fa-solid fa-arrow-up-right"></i>
+            </a>
+
+            <!-- MINI STORY 2 -->
+            <a href="#" class="storiesMiniCard">
+              <div class="storiesMiniImage">
+                <img src="assets/controllerIlustrasi.png" alt="Gaming" />
+              </div>
+
+              <div class="storiesMiniText">
+                <span>GAMING</span>
+
+                <h4>PLAY YOUR OWN WAY.</h4>
+              </div>
+
+              <i class="fa-solid fa-arrow-up-right"></i>
+            </a>
+
+            <!-- MINI STORY 3 -->
+            <a href="#" class="storiesMiniCard">
+              <div class="storiesMiniImage">
+                <img src="assets/kegiatanSepedaanIllus.jpg" alt="Cycling" />
+              </div>
+
+              <div class="storiesMiniText">
+                <span>SPORT</span>
+
+                <h4>MOVE WITH PURPOSE.</h4>
+              </div>
+
+              <i class="fa-solid fa-arrow-up-right"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+     FAQ SECTION
+===================================================== -->
+
+      <section id="faq">
+        <div class="faqContainer">
+          <!-- HEADER -->
+          <div class="faqHeader">
+            <span class="faqEyebrow"> FAQ / 04 </span>
+
+            <h2>
+              GOT
+              <br />
+              QUESTIONS?
+            </h2>
+
+            <p>A few things you might want to know before exploring VYRE.</p>
+          </div>
+
+          <!-- FAQ LIST -->
+          <div class="faqList">
+            <!-- FAQ 01 -->
+            <div class="faqItem faqReveal">
+              <button type="button" class="faqQuestion" aria-expanded="false">
+                <span class="faqNumber">01.</span>
+
+                <span class="faqQuestionText">
+                  What is VYRE and how does it work?
+                </span>
+
+                <span class="faqArrow">
+                  <i class="fa-solid fa-arrow-down"></i>
+                </span>
+              </button>
+
+              <div class="faqAnswer">
+                <div class="faqAnswerInner">
+                  <p>
+                    VYRE is a lifestyle marketplace built around your passions.
+                    Instead of simply browsing products, you can explore
+                    Fashion, Sport, and Gaming and discover products that fit
+                    your world.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 02 -->
+            <div class="faqItem faqReveal">
+              <button type="button" class="faqQuestion" aria-expanded="false">
+                <span class="faqNumber">02.</span>
+
+                <span class="faqQuestionText"> What can I find on VYRE? </span>
+
+                <span class="faqArrow">
+                  <i class="fa-solid fa-arrow-down"></i>
+                </span>
+              </button>
+
+              <div class="faqAnswer">
+                <div class="faqAnswerInner">
+                  <p>
+                    You can discover products across Fashion, Sport, and Gaming,
+                    including running shoes, bicycles, gaming controllers,
+                    headsets, and more.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 03 -->
+            <div class="faqItem faqReveal">
+              <button type="button" class="faqQuestion" aria-expanded="false">
+                <span class="faqNumber">03.</span>
+
+                <span class="faqQuestionText">
+                  How do I find the right product?
+                </span>
+
+                <span class="faqArrow">
+                  <i class="fa-solid fa-arrow-down"></i>
+                </span>
+              </button>
+
+              <div class="faqAnswer">
+                <div class="faqAnswerInner">
+                  <p>
+                    Start with the passion that represents you. From there,
+                    explore curated products and choose the items that match
+                    your interests, lifestyle, and needs.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 04 -->
+            <div class="faqItem faqReveal">
+              <button type="button" class="faqQuestion" aria-expanded="false">
+                <span class="faqNumber">04.</span>
+
+                <span class="faqQuestionText">
+                  How much does shopping on VYRE cost?
+                </span>
+
+                <span class="faqArrow">
+                  <i class="fa-solid fa-arrow-down"></i>
+                </span>
+              </button>
+
+              <div class="faqAnswer">
+                <div class="faqAnswerInner">
+                  <p>
+                    Browsing VYRE is free. Product prices depend on the item and
+                    seller, and the final amount will always be displayed before
+                    checkout.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 05 -->
+            <div class="faqItem faqReveal">
+              <button type="button" class="faqQuestion" aria-expanded="false">
+                <span class="faqNumber">05.</span>
+
+                <span class="faqQuestionText"> Can I return a product? </span>
+
+                <span class="faqArrow">
+                  <i class="fa-solid fa-arrow-down"></i>
+                </span>
+              </button>
+
+              <div class="faqAnswer">
+                <div class="faqAnswerInner">
+                  <p>
+                    Return policies depend on the product and seller. Always
+                    check the return information on the product page before
+                    completing your purchase.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 06 -->
+            <div class="faqItem faqReveal">
+              <button type="button" class="faqQuestion" aria-expanded="false">
+                <span class="faqNumber">06.</span>
+
+                <span class="faqQuestionText">
+                  How can I contact VYRE support?
+                </span>
+
+                <span class="faqArrow">
+                  <i class="fa-solid fa-arrow-down"></i>
+                </span>
+              </button>
+
+              <div class="faqAnswer">
+                <div class="faqAnswerInner">
+                  <p>
+                    You can contact our support team for help with products,
+                    orders, or any other questions about your experience with
+                    VYRE.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SPONSOR MARQUEE -->
+          <div class="faqSponsors faqReveal">
+            <div class="faqSponsorsHeader">
+              <span>BRANDS & PARTNERS</span>
+              <span>VYRE / 2026</span>
+            </div>
+
+            <div class="faqSponsorWindow">
+              <div class="faqSponsorTrack">
+                <!-- SET 1 -->
+                <div class="faqSponsorItem">
+                  <img
+                    src="https://cdn.jsdelivr.net/npm/simple-icons@16.29.0/icons/nike.svg"
+                    alt="Nike"
+                  />
+                </div>
+
+                <div class="faqSponsorItem">
+                  <img
+                    src="https://cdn.jsdelivr.net/npm/simple-icons@16.29.0/icons/adidas.svg"
+                    alt="Adidas"
+                  />
+                </div>
+
+                <div class="faqSponsorItem">
+                  <img
+                    src="https://cdn.jsdelivr.net/npm/simple-icons@16.29.0/icons/sony.svg"
+                    alt="Sony"
+                  />
+                </div>
+
+                <div class="faqSponsorItem">
+                  <img
+                    src="https://cdn.jsdelivr.net/npm/simple-icons@16.29.0/icons/playstation.svg"
+                    alt="PlayStation"
+                  />
+                </div>
+
+                <div class="faqSponsorItem">
+                  <img
+                    src="https://cdn.jsdelivr.net/npm/simple-icons@16.29.0/icons/logitech.svg"
+                    alt="Logitech"
+                  />
+                </div>
+
+                <div class="faqSponsorItem">
+                  <img
+                    src="https://cdn.jsdelivr.net/npm/simple-icons@16.29.0/icons/puma.svg"
+                    alt="Puma"
+                  />
+                </div>
+
+                <div class="faqSponsorItem">
+                  <img
+                    src="https://cdn.jsdelivr.net/npm/simple-icons@16.29.0/icons/bose.svg"
+                    alt="Bose"
+                  />
+                </div>
+
+                <!-- SET 2 -->
+                <div class="faqSponsorItem">
+                  <img
+                    src="https://cdn.jsdelivr.net/npm/simple-icons@16.29.0/icons/nike.svg"
+                    alt="Nike"
+                  />
+                </div>
+
+                <div class="faqSponsorItem">
+                  <img
+                    src="https://cdn.jsdelivr.net/npm/simple-icons@16.29.0/icons/adidas.svg"
+                    alt="Adidas"
+                  />
+                </div>
+
+                <div class="faqSponsorItem">
+                  <img
+                    src="https://cdn.jsdelivr.net/npm/simple-icons@16.29.0/icons/sony.svg"
+                    alt="Sony"
+                  />
+                </div>
+
+                <div class="faqSponsorItem">
+                  <img
+                    src="https://cdn.jsdelivr.net/npm/simple-icons@16.29.0/icons/playstation.svg"
+                    alt="PlayStation"
+                  />
+                </div>
+
+                <div class="faqSponsorItem">
+                  <img
+                    src="https://cdn.jsdelivr.net/npm/simple-icons@16.29.0/icons/logitech.svg"
+                    alt="Logitech"
+                  />
+                </div>
+
+                <div class="faqSponsorItem">
+                  <img
+                    src="https://cdn.jsdelivr.net/npm/simple-icons@16.29.0/icons/puma.svg"
+                    alt="Puma"
+                  />
+                </div>
+
+                <div class="faqSponsorItem">
+                  <img
+                    src="https://cdn.jsdelivr.net/npm/simple-icons@16.29.0/icons/bose.svg"
+                    alt="Bose"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="cta" class="ctaSection">
+        <div class="ctaContainer">
+          <div class="ctaContent">
+            <h2 class="ctaTitle">
+              <span class="ctaLine ctaLine--active">YOUR PASSION.</span>
+              <span class="ctaLine">YOUR WORLD.</span>
+              <span class="ctaLine">YOUR WAY.</span>
+            </h2>
+
+            <a href="marketplace.html" class="ctaButton">
+              <span>EXPLORE VYRE</span>
+              <span class="material-symbols-rounded">north_east</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ...existing code... -->
+
+    <footer class="siteFooter" id="siteFooter">
+      <div class="footerGlow footerParallax" data-speed="0.12"></div>
+
+      <div class="footerContainer">
+        <div class="footerBrand footerReveal">
+          <h2>VYRE</h2>
+        </div>
+
+        <div class="footerGrid">
+          <div class="footerNewsletter footerReveal">
+            <h3>STAY IN THE LOOP</h3>
+            <p>
+              Discover new arrivals, stories, and things worth knowing from
+              VYRE.
+            </p>
+
+            <form class="footerForm">
+              <label class="srOnly" for="footerEmail">Email address</label>
+              <input
+                id="footerEmail"
+                type="email"
+                placeholder="Enter your email address"
+                required
+              />
+              <button type="submit">Subscribe <span>●</span></button>
+            </form>
+          </div>
+
+          <div class="footerColumn footerReveal">
+            <h3>COMPANY</h3>
+            <a href="#about">About VYRE</a>
+            <a href="#stories">Our Story</a>
+            <a href="#passion">Our Philosophy</a>
+            <a href="#faq">Contact</a>
+          </div>
+
+          <div class="footerColumn footerReveal">
+            <h3>SUPPORT</h3>
+            <a href="#faq">FAQ</a>
+            <a href="#">Shipping &amp; Returns</a>
+            <a href="#">Order Tracking</a>
+            <a href="#faq">Contact</a>
+          </div>
+        </div>
+
+        <div class="footerSocial footerReveal">
+          <h3>SOCIAL MEDIA</h3>
+          <a href="#">Instagram</a>
+          <span>·</span>
+          <a href="#">TikTok</a>
+          <span>·</span>
+          <a href="#">YouTube</a>
+        </div>
+
+        <div class="footerBottom footerReveal">
+          <span>© 2026 VYRE. All rights reserved.</span>
+
+          <button class="footerBackTop" type="button" aria-label="Back to top">
+            <span class="material-symbols-rounded">north</span>
+            <small>Back</small>
+          </button>
+        </div>
+      </div>
+    </footer>
+
+    <div class="purchaseModal" id="purchaseModal" aria-hidden="true">
+      <div class="purchaseModalBackdrop" data-close-purchase></div>
+      <section
+        class="purchaseDialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="purchaseTitle"
+      >
+        <button
+          class="purchaseClose"
+          type="button"
+          aria-label="Close purchase dialog"
+          data-close-purchase
+        >
+          <span class="material-symbols-rounded">close</span>
+        </button>
+        <p class="purchaseEyebrow">READY TO MOVE?</p>
+        <h2 id="purchaseTitle">Buy this product</h2>
+        <div class="purchaseProductSummary">
+          <img id="purchaseProductImage" src="" alt="" />
+          <div>
+            <p id="purchaseProductCategory"></p>
+            <h3 id="purchaseProductName"></h3>
+            <strong id="purchaseProductPrice"></strong>
+          </div>
+        </div>
+        <form id="purchaseForm" class="purchaseForm">
+          <label for="purchaseQuantity">Quantity</label>
+          <input
+            id="purchaseQuantity"
+            type="number"
+            min="1"
+            value="1"
+            required
+          />
+          <div class="purchaseActions">
+            <button type="button" id="addToCartButton">
+              Add to Cart
+              <span class="material-symbols-rounded">shopping_bag</span>
+            </button>
+            <button type="submit">
+              Buy Now
+              <span class="material-symbols-rounded">arrow_forward</span>
+            </button>
+          </div>
+        </form>
+        <p id="purchaseStatus" class="purchaseStatus" role="status"></p>
+      </section>
+    </div>
+
+    <div class="paymentModal" id="paymentModal" aria-hidden="true">
+      <div class="purchaseModalBackdrop" data-close-payment></div>
+      <section
+        class="purchaseDialog paymentDialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="paymentTitle"
+      >
+        <button
+          class="purchaseClose"
+          type="button"
+          aria-label="Close payment dialog"
+          data-close-payment
+        >
+          <span class="material-symbols-rounded">close</span>
+        </button>
+        <p class="purchaseEyebrow">SECURE CHECKOUT</p>
+        <h2 id="paymentTitle">Complete payment</h2>
+        <div class="paymentOrderLine">
+          <span id="paymentProductName">Your VYRE order</span>
+          <strong id="paymentTotal">$399.000</strong>
+        </div>
+        <form id="paymentForm" class="paymentForm">
+          <label for="paymentName">Full name</label>
+          <input
+            id="paymentName"
+            type="text"
+            placeholder="Your name"
+            required
+          />
+          <label for="paymentEmail">Email</label>
+          <input
+            id="paymentEmail"
+            type="email"
+            placeholder="you@example.com"
+            required
+          />
+          <fieldset>
+            <legend>Payment method</legend>
+            <label class="paymentMethod"
+              ><input type="radio" name="paymentMethod" value="card" checked />
+              Card</label
+            >
+            <label class="paymentMethod"
+              ><input type="radio" name="paymentMethod" value="ewallet" />
+              E-wallet</label
+            >
+            <label class="paymentMethod"
+              ><input type="radio" name="paymentMethod" value="bank" /> Bank
+              transfer</label
+            >
+          </fieldset>
+          <div class="cardFields" id="cardFields">
+            <label for="cardNumber">Card number</label>
+            <input
+              id="cardNumber"
+              inputmode="numeric"
+              placeholder="1234 5678 9012 3456"
+              minlength="12"
+              required
+            />
+            <div class="cardSmallFields">
+              <div>
+                <label for="cardExpiry">Expiry</label
+                ><input id="cardExpiry" placeholder="MM/YY" required />
+              </div>
+              <div>
+                <label for="cardCvv">CVV</label
+                ><input
+                  id="cardCvv"
+                  inputmode="numeric"
+                  placeholder="123"
+                  minlength="3"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <button type="submit">
+            Pay Now <span class="material-symbols-rounded">lock</span>
+          </button>
+        </form>
+        <p id="paymentStatus" class="purchaseStatus" role="status"></p>
+      </section>
+    </div>
+
+    <div class="successModal" id="homepageSuccessModal" aria-hidden="true">
+      <div class="successBackdrop" data-close-success></div>
+      <section
+        class="successDialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="homepageSuccessTitle"
+      >
+        <div class="successIcon">✓</div>
+        <p class="purchaseEyebrow">ORDER CONFIRMED</p>
+        <h2 id="homepageSuccessTitle">Payment successful</h2>
+        <p>Your order has been received and is being prepared.</p>
+        <button type="button" class="shopButton" data-close-success>
+          Continue shopping
+        </button>
+      </section>
+    </div>
+    <div id="shopToast" class="shopToast" role="status"></div>
+
+    <!-- ...existing code... -->
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script src="js/smooth-scroll.js"></script>
+    <script src="js/swiper.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/about.js"></script>
+    <script src="js/passion.js"></script>
+    <script src="js/stories.js"></script>
+    <script src="js/faq.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/parallax.js"></script>
+    <script src="js/page-loader.js"></script>
+    <script src="js/ai-chat.js"></script>
+  </body>
+</html>

@@ -1,0 +1,194 @@
+/* =========================================================
+   CTA SECTION
+   ========================================================= */
+
+#cta {
+  background: linear-gradient(180deg, rgba(20, 20, 20, 1) 0%, rgba(10, 10, 10, 1) 100%);
+  color: var(--color-white);
+  overflow: hidden;
+}
+
+.ctaSection {
+  min-height: 90vh;
+  padding: var(--space-128) 0 var(--space-96);
+  display: flex;
+  flex-direction: column;
+}
+
+.ctaContainer {
+  width: var(--container-width);
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.ctaContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.ctaTitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-display);
+  font-size: var(--fs-display-lg);
+  font-weight: var(--fw-extrabold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+
+  text-transform: uppercase;
+}
+
+
+/* setiap baris */
+
+.ctaLine {
+  display: block;
+
+  color: rgba(255, 255, 255, 0.28);
+
+  cursor: default;
+
+  transition:
+    color var(--transition-slow),
+    transform var(--transition-slow);
+}
+
+
+/* baris pertama */
+
+.ctaLine--active {
+  color: var(--color-white);
+}
+
+
+/* hover */
+
+.ctaLine:hover {
+  color: var(--color-white);
+  transform: translateX(var(--space-8));
+}
+
+
+/* kalau title sedang di-hover,
+   semua yang sebelumnya redup ikut menyala */
+
+.ctaTitle:hover .ctaLine {
+  color: var(--color-white);
+}
+
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.ctaButton {
+  margin-top: var(--space-48);
+
+  min-height: var(--btn-height);
+  padding: 0 var(--btn-padding-x);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-12);
+
+  background: var(--color-gaming);
+  color: var(--color-white);
+
+  border-radius: var(--btn-radius);
+
+  font-family: var(--font-ui);
+  font-size: var(--fs-button);
+  font-weight: var(--fw-semibold);
+  text-decoration: none;
+  letter-spacing: var(--ls-wide);
+
+  transition:
+    transform var(--transition-normal),
+    background-color var(--transition-normal),
+    box-shadow var(--transition-normal);
+    max-width: 15rem;
+}
+
+
+.ctaButton .material-symbols-rounded {
+  font-size: var(--icon-sm);
+  transition: transform var(--transition-normal);
+}
+
+
+/* hover button */
+
+.ctaButton:hover {
+  background: var(--color-gaming-dark);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(184, 155, 255, 0.18);
+}
+
+
+.ctaButton:hover .material-symbols-rounded {
+  transform: translate(3px, -3px);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .ctaSection {
+    min-height: 75vh;
+    padding: var(--space-96) 0 var(--space-80);
+  }
+
+  .ctaTitle {
+    font-size: var(--fs-display-md);
+  }
+
+  .ctaButton {
+    margin-top: var(--space-40);
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .ctaSection {
+    min-height: 70vh;
+    padding: var(--space-80) 0 var(--space-64);
+  }
+
+  .ctaTitle {
+    font-size: var(--fs-display-sm);
+  }
+
+  .ctaButton {
+    margin-top: var(--space-32);
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .ctaLine,
+  .ctaButton,
+  .ctaButton .material-symbols-rounded {
+    transition: none;
+  }
+
+}

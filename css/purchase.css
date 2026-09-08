@@ -1,0 +1,314 @@
+.purchaseModal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .25s ease, visibility .25s ease;
+}
+
+.purchaseModal.is-open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.purchaseModalBackdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(17, 17, 17, .65);
+  backdrop-filter: blur(5px);
+}
+
+.purchaseDialog {
+  position: relative;
+  width: min(100%, 31rem);
+  max-height: calc(100dvh - 2rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-color: #7654b8 transparent;
+  padding: 2rem;
+  border-radius: .5rem;
+  background: #fff;
+  color: #15151a;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .25);
+  transform: translateY(1rem);
+  transition: transform .25s ease;
+}
+
+.purchaseModal.is-open .purchaseDialog {
+  transform: translateY(0);
+}
+
+.purchaseClose {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.purchaseEyebrow,
+.purchaseProductCategory {
+  margin: 0;
+  color: #686873;
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.purchaseDialog h2 {
+  margin: .5rem 0 1.5rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 5vw, 2.7rem);
+  line-height: 1;
+}
+
+.purchaseProductSummary {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: .75rem;
+  border: 1px solid #e5e3e8;
+  background: #faf9fb;
+}
+
+.purchaseProductSummary img {
+  width: 6rem;
+  height: 6rem;
+  object-fit: contain;
+}
+
+.purchaseProductSummary h3 {
+  margin: .3rem 0;
+  font-size: 1.1rem;
+}
+
+.purchaseProductSummary strong {
+  color: #7654b8;
+}
+
+.purchaseForm {
+  display: grid;
+  grid-template-columns: 1fr 6rem;
+  gap: .6rem;
+  margin-top: 1.25rem;
+}
+
+.purchaseForm label {
+  grid-column: 1 / -1;
+  font-size: .75rem;
+  font-weight: 600;
+}
+
+.purchaseForm input {
+  min-width: 0;
+  padding: .8rem;
+  border: 1px solid #dcd9e2;
+  font: inherit;
+}
+
+.purchaseForm button {
+  grid-column: 1 / -1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: .85rem 1rem;
+  border: 0;
+  background: #15151a;
+  color: #fff;
+  font: inherit;
+  font-size: .75rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.purchaseStatus {
+  min-height: 1.2rem;
+  margin: .8rem 0 0;
+  color: #7654b8;
+  font-size: .75rem;
+}
+
+body.purchaseModalOpen {
+  overflow: hidden;
+}
+
+.container__swiperHero img,
+.aboutRightImage img,
+.passionProductImage img,
+.passionPromoProduct img,
+.passionCardImage img {
+  cursor: pointer;
+}
+
+@media (max-width: 30rem) {
+  .purchaseDialog {
+    padding: 1.5rem;
+  }
+}
+
+.paymentModal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .25s ease, visibility .25s ease;
+}
+
+.paymentModal.is-open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.paymentModal.is-open .purchaseDialog {
+  transform: translateY(0);
+}
+
+.paymentDialog {
+  max-height: min(42rem, 92vh);
+  overflow-y: auto;
+}
+
+.paymentOrderLine {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e5e3e8;
+  font-size: .8rem;
+}
+
+.paymentOrderLine strong {
+  color: #7654b8;
+  white-space: nowrap;
+}
+
+.paymentForm {
+  display: grid;
+  gap: .45rem;
+  margin-top: 1rem;
+}
+
+.paymentForm > label,
+.cardFields label,
+.cardSmallFields label {
+  margin-top: .4rem;
+  font-size: .7rem;
+  font-weight: 700;
+}
+
+.paymentForm > input,
+.cardFields input {
+  width: 100%;
+  padding: .75rem;
+  border: 1px solid #dcd9e2;
+  font: inherit;
+  font-size: .8rem;
+}
+
+.paymentForm fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin: .75rem 0 .25rem;
+  padding: 0;
+  border: 0;
+}
+
+.paymentForm legend {
+  width: 100%;
+  margin-bottom: .2rem;
+  font-size: .7rem;
+  font-weight: 700;
+}
+
+.paymentMethod {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  padding: .55rem .65rem;
+  border: 1px solid #dcd9e2;
+  font-size: .7rem;
+  cursor: pointer;
+}
+
+.paymentMethod input {
+  accent-color: #7654b8;
+}
+
+.cardFields {
+  display: grid;
+  gap: .45rem;
+}
+
+.cardFields.is-hidden {
+  display: none;
+}
+
+.cardSmallFields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .6rem;
+}
+
+.cardSmallFields > div {
+  display: grid;
+  gap: .45rem;
+}
+
+.paymentForm > button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  margin-top: .8rem;
+  padding: .85rem 1rem;
+  border: 0;
+  background: #15151a;
+  color: #fff;
+  font: inherit;
+  font-size: .75rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.purchaseActions {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: .6rem;
+}
+
+.purchaseActions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: .85rem 1rem;
+  border: 0;
+  background: #15151a;
+  color: #fff;
+  font: inherit;
+  font-size: .75rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.purchaseActions button:first-child {
+  background: #b89bff;
+  color: #15151a;
+}
