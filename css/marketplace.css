@@ -59,6 +59,7 @@
 .catalogCardInfo { display: flex; flex: 1; flex-direction: column; padding: 1rem; }
 .catalogCardCategory { margin: 0 0 .35rem; color: var(--market-accent); font-size: .58rem; font-weight: 800; letter-spacing: .1em; }
 .catalogCard h2 { margin: 0 0 .8rem; font-family: var(--font-display); font-size: 1rem; }
+.catalogCardDescription { margin: -.35rem 0 .8rem; color: var(--market-muted); font-size: .68rem; line-height: 1.5; }
 .catalogCardBottom { display: flex; align-items: center; justify-content: space-between; gap: .5rem; margin-top: auto; }
 .catalogCardPrice { color: var(--market-ink); font-size: .82rem; font-weight: 800; }
 .catalogEmpty { grid-column: 1 / -1; padding: 4rem 1rem; border: 1px dashed var(--market-line); color: var(--market-muted); text-align: center; }

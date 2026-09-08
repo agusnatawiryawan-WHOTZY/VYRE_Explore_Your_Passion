@@ -23,6 +23,7 @@
 .catalogCardInfo { display: flex; flex: 1; flex-direction: column; padding: .9rem; }
 .catalogCardCategory { margin: 0 0 .35rem; color: #7654b8; font-size: .58rem; font-weight: 700; letter-spacing: .1em; }
 .catalogCard h2 { margin: 0 0 .8rem; font-size: 1rem; }
+.catalogCardDescription { margin: -.35rem 0 .8rem; color: #686873; font-size: .68rem; line-height: 1.5; }
 .catalogCardBottom { display: flex; align-items: center; justify-content: space-between; gap: .5rem; margin-top: auto; }
 .catalogCardPrice { color: #15151a; font-size: .78rem; font-weight: 700; }
 .catalogAdd { display: inline-flex; align-items: center; gap: .35rem; padding: .55rem .65rem; border: 0; background: #15151a; color: #fff; font: inherit; font-size: .62rem; cursor: pointer; }
