@@ -79,7 +79,23 @@ document.addEventListener("DOMContentLoaded", () => {
       "Sepeda performa untuk perjalanan kota, tikungan cepat, dan jalan terbuka.",
     ],
   ];
-  let activeFilter = "ALL";
+  const requestedCategory = new URLSearchParams(window.location.search)
+    .get("category")
+    ?.toUpperCase();
+  let activeFilter = ["ALL", "FASHION", "GAMING", "SPORT"].includes(
+    requestedCategory,
+  )
+    ? requestedCategory
+    : "ALL";
+  document.querySelectorAll("#marketNav a[href*='marketplace.html']").forEach((link) => {
+    const category = new URL(link.href, window.location.href).searchParams
+      .get("category")
+      ?.toUpperCase();
+    link.classList.toggle(
+      "is-active",
+      category ? category === activeFilter : activeFilter === "ALL",
+    );
+  });
   const formatPrice = (value) => `Rp${value.toLocaleString("id-ID")}`;
   const showToast = (message) => {
     toast.textContent = message;
@@ -111,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     localStorage.setItem("vyreCart", JSON.stringify(cart));
     updateCount();
-    showToast(`${product[1]} masuk ke keranjang.`);
+    // showToast(`${product[1]} masuk ke keranjang.`);
   };
   const render = () => {
     const query = searchInput.value.trim().toLowerCase();
@@ -137,6 +153,9 @@ document.addEventListener("DOMContentLoaded", () => {
           .join("")
       : `<p class="catalogEmpty">Produk yang kamu cari belum ditemukan.</p>`;
   };
+  document.querySelectorAll(".catalogFilter").forEach((button) =>
+    button.classList.toggle("is-active", button.dataset.filter === activeFilter),
+  );
   document.querySelectorAll(".catalogFilter").forEach((button) =>
     button.addEventListener("click", () => {
       document
