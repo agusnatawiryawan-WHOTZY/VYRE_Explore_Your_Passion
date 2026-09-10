@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const marketMain = document.querySelector(".marketMain");
   const marketHeader = document.querySelector(".marketHeader");
   const menuToggle = document.querySelector("#marketMenuToggle");
+  const marketSearchForm = document.querySelector("#marketSearchForm");
   if (searchArea && marketHeader)
     marketHeader.insertBefore(searchArea, menuToggle);
   if (marketHeader && !marketHeader.querySelector(".marketUtility")) {
@@ -79,6 +80,50 @@ document.addEventListener("DOMContentLoaded", () => {
       "Sepeda performa untuk perjalanan kota, tikungan cepat, dan jalan terbuka.",
     ],
   ];
+  const suggestionList = document.createElement("div");
+  suggestionList.className = "marketSearchSuggestions";
+  suggestionList.setAttribute("role", "listbox");
+  suggestionList.hidden = true;
+  marketSearchForm.append(suggestionList);
+
+  const matchesSearch = (product, query) => {
+    const normalizedQuery = query.trim().toLowerCase();
+    if (!normalizedQuery) return true;
+    return `${product[0]} ${product[1]} ${product[4]}`
+      .toLowerCase()
+      .includes(normalizedQuery);
+  };
+
+  const getSearchSuggestions = async (query) => {
+    const normalizedQuery = query.trim().toLowerCase();
+    if (!normalizedQuery) return [];
+    return products
+      .map((product, index) => ({ product, index }))
+      .filter(
+        ({ product }) =>
+          (activeFilter === "ALL" || product[0] === activeFilter) &&
+          matchesSearch(product, normalizedQuery),
+      )
+      .slice(0, 5);
+  };
+  const closeSuggestions = () => {
+    suggestionList.hidden = true;
+    suggestionList.innerHTML = "";
+  };
+  const updateSuggestions = async () => {
+    const suggestions = await getSearchSuggestions(searchInput.value);
+    if (!suggestions.length || document.activeElement !== searchInput) {
+      closeSuggestions();
+      return;
+    }
+    suggestionList.innerHTML = suggestions
+      .map(
+        ({ product, index }) =>
+          `<button type="button" class="marketSearchSuggestion" role="option" data-suggestion-index="${index}"><span class="material-symbols-rounded">search</span><span><strong>${product[1]}</strong><small>${product[0]} · ${formatPrice(product[3])}</small></span><span class="material-symbols-rounded">arrow_outward</span></button>`,
+      )
+      .join("");
+    suggestionList.hidden = false;
+  };
   const requestedCategory = new URLSearchParams(window.location.search)
     .get("category")
     ?.toUpperCase();
@@ -134,9 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let visibleProducts = products.filter(
       (product) =>
         (activeFilter === "ALL" || product[0] === activeFilter) &&
-        (!query ||
-          product[1].toLowerCase().includes(query) ||
-          product[0].toLowerCase().includes(query)),
+        matchesSearch(product, query),
     );
     if (sortSelect.value === "low") visibleProducts.sort((a, b) => a[3] - b[3]);
     if (sortSelect.value === "high")
@@ -170,10 +213,30 @@ document.addEventListener("DOMContentLoaded", () => {
     const button = event.target.closest("[data-product-index]");
     if (button) addToCart(products[Number(button.dataset.productIndex)]);
   });
-  searchInput.addEventListener("input", render);
-  document
-    .querySelector("#marketSearchForm")
-    .addEventListener("submit", (event) => event.preventDefault());
+  searchInput.addEventListener("input", () => {
+    render();
+    updateSuggestions();
+  });
+  searchInput.addEventListener("focus", updateSuggestions);
+  searchInput.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeSuggestions();
+  });
+  marketSearchForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    closeSuggestions();
+    render();
+  });
+  suggestionList.addEventListener("click", (event) => {
+    const suggestion = event.target.closest("[data-suggestion-index]");
+    if (!suggestion) return;
+    searchInput.value = products[Number(suggestion.dataset.suggestionIndex)][1];
+    closeSuggestions();
+    render();
+    searchInput.focus();
+  });
+  document.addEventListener("click", (event) => {
+    if (!marketSearchForm.contains(event.target)) closeSuggestions();
+  });
   sortSelect.addEventListener("change", render);
   document.querySelectorAll("[data-search-term]").forEach((button) =>
     button.addEventListener("click", () => {

@@ -1,0 +1,333 @@
+/* Shared mobile layout safeguards */
+@media (max-width: 56rem) {
+  :root {
+    --nav-height: 4.25rem;
+    --nav-padding-x: 1rem;
+    --container-width: min(100% - 2rem, var(--container-max));
+    --market-content-width: min(100% - 2rem, 82rem);
+    --section-padding-y: 4rem;
+  }
+
+  body {
+    min-width: 0;
+    font-size: 1rem;
+  }
+
+  h1, h2, h3, h4, h5, h6,
+  p, a, button, input, select, textarea {
+    overflow-wrap: anywhere;
+  }
+
+  button, a, input, select, textarea {
+    min-height: 2.75rem;
+  }
+
+  #navBarMain {
+    padding: .75rem 1rem;
+  }
+
+  #navBarMain.navPaddingAktif {
+    padding: .75rem 1rem;
+  }
+
+  .logoNav img {
+    width: 1.75rem;
+  }
+
+  .logoNav h3 {
+    font-size: 1.35rem;
+  }
+
+  .containerNavMobile {
+    width: min(21rem, 88vw);
+    padding: 1rem;
+  }
+
+  #navMobile ul li a,
+  .btnToDropDown h4 {
+    font-size: 1.35rem;
+  }
+
+  #navMobile ul li a:hover,
+  #navMobile ul li a:focus-visible,
+  .btnToDropDown:hover,
+  .btnToDropDown:focus-visible,
+  .btnPassions:hover,
+  .btnPassions:focus-visible {
+    background-color: var(--color-brand-soft);
+    color: var(--color-brand-primary);
+    transform: none;
+  }
+
+  #hero {
+    min-height: auto;
+  }
+
+  #about,
+  .container__aboutLeft,
+  .passionIntro,
+  .passionFeatured,
+  .aboutStats,
+  .storiesGrid,
+  .faqLayout,
+  .footerGrid {
+    grid-template-columns: 1fr;
+  }
+
+  #about {
+    min-height: auto;
+    gap: 2.5rem;
+    padding: 5.5rem 1rem 4rem;
+  }
+
+  .container__aboutLeft {
+    gap: 1.5rem;
+  }
+
+  .container__swiperAbout {
+    height: min(75vw, 30rem);
+  }
+
+  #passion {
+    padding: 5rem 1rem 4rem;
+  }
+
+  .passionIntro {
+    gap: 1.5rem;
+    min-height: 0;
+  }
+
+  .passionIntroLeft h2,
+  .container__textCtaMain h2 {
+    font-size: clamp(2.25rem, 12vw, 3.75rem);
+  }
+
+  .passionFeatured {
+    gap: 1rem;
+  }
+
+  .passionProductImage,
+  .passionLifestyleImage {
+    height: min(70vw, 22rem);
+    min-height: 0;
+  }
+
+  .vyreAiWidget {
+    right: .75rem;
+    bottom: .75rem;
+  }
+
+  .vyreAiPanel {
+    right: 0;
+    bottom: 4.5rem;
+    width: min(23rem, calc(100vw - 1.5rem));
+    height: min(33rem, calc(100dvh - 7rem));
+  }
+
+  .marketHeader {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 4.25rem auto;
+    min-height: 4.25rem;
+    padding-inline: 1rem;
+  }
+
+  .marketHeader .marketSearchArea {
+    grid-column: 1 / -1;
+  }
+
+  .marketNav {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    display: none;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: .75rem 0;
+  }
+
+  .marketNav.is-open {
+    display: flex;
+  }
+
+  .marketNav a:hover,
+  .marketNav a:focus-visible {
+    background-color: var(--color-brand-soft);
+    color: var(--color-brand-primary);
+  }
+
+  .marketGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .65rem;
+  }
+
+  .marketGrid .catalogCard {
+    min-height: 0;
+  }
+
+  .marketGrid .catalogCardImage {
+    min-height: 9rem;
+    padding: .65rem;
+  }
+
+  .marketGrid .catalogCardImage img {
+    height: 8rem;
+  }
+
+  .marketGrid .catalogCardInfo {
+    padding: .7rem;
+  }
+
+  .marketGrid .catalogCard h2 {
+    margin-bottom: .5rem;
+    font-size: .9rem;
+  }
+
+  .marketGrid .catalogCardDescription {
+    font-size: .62rem;
+  }
+
+  .marketGrid .catalogAdd {
+    width: 2.15rem;
+    height: 2.15rem;
+  }
+
+  .marketGrid .catalogAdd:hover,
+  .marketGrid .catalogAdd:focus-visible {
+    background-color: var(--color-brand-hover);
+    color: #fff;
+  }
+
+  .marketGrid .catalogAdd:hover .material-symbols-rounded,
+  .marketGrid .catalogAdd:focus-visible .material-symbols-rounded {
+    color: #fff;
+  }
+
+  .marketSearch .marketSearchSuggestion {
+    min-height: 0;
+    padding: .55rem .6rem;
+  }
+
+  .marketMain {
+    padding-top: 8rem;
+  }
+
+  .marketHero,
+  .marketCategories,
+  .marketToolbar {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .marketCategoryGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .shopHeader {
+    padding: 1rem;
+  }
+
+  .shopMain {
+    width: min(100% - 1.5rem, 70rem);
+    padding: 3.5rem 0;
+  }
+
+  .shopMain h1 {
+    font-size: clamp(2.5rem, 13vw, 4.5rem);
+  }
+
+  .catalogMainNav {
+    gap: .5rem;
+  }
+
+  .catalogMainNav a {
+    font-size: .75rem;
+  }
+
+  .catalogGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .authMain {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    width: min(100% - 2rem, 40rem);
+    min-height: auto;
+    padding: 6rem 0 3rem;
+  }
+
+  .authIntro h1 {
+    font-size: clamp(3rem, 16vw, 5rem);
+  }
+
+  .profileMain {
+    width: min(100% - 2rem, 40rem);
+    padding: 6rem 0 3rem;
+  }
+}
+
+@media (max-width: 36rem) {
+  .marketCategoryGrid,
+  .catalogGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .marketGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .marketCategory {
+    min-height: 9rem;
+  }
+
+  .catalogIntro,
+  .catalogToolbar,
+  .shopHeader,
+  .authHeader {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .catalogMainNav {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .catalogMainNav a {
+    min-height: 2.5rem;
+  }
+
+  .cartItem {
+    grid-template-columns: 4.5rem minmax(0, 1fr);
+  }
+
+  .cartItem img {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  .cartRemove {
+    grid-column: 2;
+  }
+
+  .successDialog {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 25rem) {
+  .containerNavMobile {
+    width: 100%;
+    max-width: none;
+  }
+
+  .container__textCtaHero h1 {
+    font-size: 1.4rem;
+  }
+
+  .marketSearch input,
+  .checkoutForm input,
+  .checkoutForm select,
+  .authForm input {
+    font-size: 1rem;
+  }
+}
