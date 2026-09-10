@@ -81,6 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ],
   ];
   const suggestionList = document.createElement("div");
+  suggestionList.id = "marketSearchSuggestions";
   suggestionList.className = "marketSearchSuggestions";
   suggestionList.setAttribute("role", "listbox");
   suggestionList.hidden = true;
