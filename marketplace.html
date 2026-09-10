@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="id">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Marketplace VYRE | Gear Fashion, Gaming, dan Sport</title>
+    <title>VYRE Marketplace | Fashion, Gaming, and Sport Gear</title>
     <meta
       name="description"
-      content="Jelajahi marketplace VYRE untuk menemukan gear fashion, gaming, dan sport pilihan untuk gaya dan aktivitasmu."
+      content="Explore the VYRE marketplace to discover curated fashion, gaming, and sport gear for your style and active life."
     />
     <meta name="robots" content="index, follow" />
     <link
@@ -34,7 +34,7 @@
     <div
       class="pageLoader"
       id="pageLoader"
-      aria-label="Memuat VYRE Marketplace"
+      aria-label="Loading VYRE Marketplace"
       role="status"
     >
       <div class="pageLoaderPanel">
@@ -64,7 +64,7 @@
       >
         <span class="material-symbols-rounded">menu</span>
       </button>
-      <nav class="marketNav" id="marketNav" aria-label="Navigasi marketplace">
+      <nav class="marketNav" id="marketNav" aria-label="Marketplace navigation">
         <a href="index.html"
           ><span class="material-symbols-rounded">home</span
           ><span>Home</span></a
@@ -74,10 +74,10 @@
         ><a href="marketplace.html?category=GAMING">Gaming</a
         ><a class="marketNavIcon" href="cart.html"
           ><span class="material-symbols-rounded">shopping_bag</span
-          ><span>Keranjang</span><b id="marketCartCount">0</b></a
+          ><span>Cart</span><b id="marketCartCount">0</b></a
         ><a class="marketNavIcon" href="profile.html"
           ><span class="material-symbols-rounded">account_circle</span
-          ><span id="marketProfileLabel">Profil</span></a
+          ><span id="marketProfileLabel">Profile</span></a
         >
       </nav>
     </header>
@@ -85,27 +85,27 @@
       <section class="marketHero">
         <div>
           <p class="marketEyebrow">VYRE / MARKETPLACE</p>
-          <h1>Gear untuk<br /><em>versi terbaikmu.</em></h1>
+          <h1>Gear for your<br /><em>best version.</em></h1>
         </div>
         <p class="marketLead">
-          Temukan perangkat, apparel, dan essentials yang dibuat untuk bergerak,
-          bermain, dan tampil berbeda.
+          Discover devices, apparel, and essentials made for movement, play, and
+          standing apart.
         </p>
       </section>
-      <section class="marketSearchArea" aria-label="Cari produk">
+      <section class="marketSearchArea" aria-label="Search products">
         <form class="marketSearch" id="marketSearchForm">
           <span class="material-symbols-rounded">search</span
           ><input
             id="marketSearchInput"
             type="search"
-            placeholder="Cari produk, kategori, atau gear..."
+            placeholder="Search products, categories, or gear..."
             autocomplete="off"
             aria-autocomplete="list"
             aria-controls="marketSearchSuggestions"
-          /><button type="submit">Cari</button>
+          /><button type="submit">Search</button>
         </form>
         <div class="marketQuickLinks">
-          <span>Populer:</span
+          <span>Popular:</span
           ><button type="button" data-search-term="Headset">Headset</button
           ><button type="button" data-search-term="Shoes">Shoes</button
           ><button type="button" data-search-term="Controller">
@@ -114,13 +114,13 @@
         </div>
       </section>
       <section class="marketToolbar">
-        <div class="catalogFilters" role="group" aria-label="Kategori produk">
+        <div class="catalogFilters" role="group" aria-label="Product categories">
           <button
             class="catalogFilter is-active"
             type="button"
             data-filter="ALL"
           >
-            Semua</button
+            All</button
           ><button class="catalogFilter" type="button" data-filter="FASHION">
             Fashion</button
           ><button class="catalogFilter" type="button" data-filter="GAMING">
@@ -130,18 +130,18 @@
           </button>
         </div>
         <label class="marketSort"
-          >Urutkan
+          >Sort by
           <select id="marketSort">
-            <option value="featured">Pilihan VYRE</option>
-            <option value="low">Harga terendah</option>
-            <option value="high">Harga tertinggi</option>
-            <option value="name">Nama produk</option>
+            <option value="featured">VYRE picks</option>
+            <option value="low">Lowest price</option>
+            <option value="high">Highest price</option>
+            <option value="name">Product name</option>
           </select></label
         >
       </section>
       <div class="marketResults">
-        <span id="catalogResultCount">8 PRODUK</span
-        ><span>Gratis ongkir untuk order tertentu</span>
+        <span id="catalogResultCount">8 PRODUCTS</span
+        ><span>Free shipping on select orders</span>
       </div>
       <section
         class="catalogGrid marketGrid"

@@ -41,28 +41,28 @@ document.addEventListener("DOMContentLoaded", () => {
       text.includes("audio") ||
       text.includes("suara")
     )
-      return "Untuk gaming dan audio imersif, pilih Headset dengan Adaptive Sound, Active Noise Cancelling, dan Hi-Res Audio. Harganya mulai dari $399.000.";
+      return "For gaming and immersive audio, choose the Headset with Adaptive Sound, Active Noise Cancelling, and Hi-Res Audio. It starts at $399.000.";
     if (text.includes("controller") || text.includes("game"))
-      return "Controller cocok untuk kontrol presisi. Controller mulai dari $299.000, sedangkan Controller Pro menawarkan pengalaman premium seharga $499.000.";
+      return "The Controller is built for precise control. It starts at $299.000, while the Controller Pro offers a premium experience for $499.000.";
     if (
       text.includes("bike") ||
       text.includes("bicycle") ||
       text.includes("sepeda")
     )
-      return "Bicycle VYRE dirancang untuk perjalanan dan momentum harian. Harganya mulai dari $2.999.000.";
+      return "The VYRE Bicycle is designed for daily rides and momentum. It starts at $2.999.000.";
     if (
       text.includes("shoe") ||
       text.includes("sepatu") ||
       text.includes("lari")
     )
-      return "Untuk bergerak lebih nyaman, Running Shoes tersedia seharga $799.000 dan Sport Shoes seharga $699.000.";
+      return "For more comfortable movement, Running Shoes are available for $799.000 and Sport Shoes for $699.000.";
     if (
       text.includes("harga") ||
       text.includes("price") ||
       text.includes("murah")
     )
-      return "VYRE punya pilihan mulai dari $299.000 untuk Controller dan $399.000 untuk Headset. Buka Catalog untuk melihat semua produk.";
-    return "Saya bisa membantu tentang Headset, Controller, Bicycle, Running Shoes, harga, atau rekomendasi produk VYRE.";
+      return "VYRE offers options starting at $299.000 for the Controller and $399.000 for the Headset. Open the Catalog to see every product.";
+    return "I can help with Headsets, Controllers, Bicycles, Running Shoes, pricing, or VYRE product recommendations.";
   };
 
   const submitQuestion = (question) => {

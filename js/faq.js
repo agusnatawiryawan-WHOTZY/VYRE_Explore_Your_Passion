@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
         item.classList.contains("is-open");
 
 
-      // Tutup semua item lainnya
+      // Close all other items.
       faqItems.forEach((otherItem) => {
 
         otherItem.classList.remove("is-open");

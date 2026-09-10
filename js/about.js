@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const sectionHeight = aboutSection.offsetHeight;
     const scrollTop = window.scrollY;
 
-    // Cek apakah About berada di area viewport
+    // Check whether the About section is in the viewport.
     const sectionIsVisible =
       scrollTop + window.innerHeight > sectionTop &&
       scrollTop < sectionTop + sectionHeight;

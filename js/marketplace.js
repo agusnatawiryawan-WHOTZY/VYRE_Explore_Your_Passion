@@ -34,49 +34,49 @@ document.addEventListener("DOMContentLoaded", () => {
       "Track Jacket",
       "assets/jaket_keren.png",
       899000,
-      "Jaket training hitam dengan detail garis kontras untuk gaya aktif sehari-hari.",
+      "Black training jacket with contrast stripe details for everyday active style.",
     ],
     [
       "FASHION",
       "Skena Track Pants",
       "assets/celana_skena.png",
       699000,
-      "Celana santai berpotongan longgar dengan grafis tribal yang berani.",
+      "Relaxed-fit pants with bold tribal graphics.",
     ],
     [
       "FASHION",
       "Essential Black Shirt",
       "assets/kemeja.png",
       499000,
-      "Kemeja hitam serbaguna dengan bahan ringan dan potongan rapi.",
+      "Versatile black shirt with lightweight fabric and a clean cut.",
     ],
     [
       "GAMING",
       "Headset",
       "assets/headset.png",
       399000,
-      "Suara imersif dan bantalan nyaman untuk bermain sepanjang malam.",
+      "Immersive sound and comfortable cushioning for all-night play.",
     ],
     [
       "GAMING",
       "Controller",
       "assets/controller.png",
       299000,
-      "Grip ergonomis dan kontrol responsif untuk setiap gerakan presisi.",
+      "Ergonomic grip and responsive controls for every precise move.",
     ],
     [
       "SPORT",
       "Running Shoes",
       "assets/running-shoe.png",
       799000,
-      "Sepatu lari fleksibel dengan bantalan ringan untuk setiap langkah.",
+      "Flexible running shoes with lightweight cushioning for every step.",
     ],
     [
       "SPORT",
       "Performance Bike",
       "assets/bicycle.png",
       3499000,
-      "Sepeda performa untuk perjalanan kota, tikungan cepat, dan jalan terbuka.",
+      "A performance bike for city rides, quick turns, and open roads.",
     ],
   ];
   const suggestionList = document.createElement("div");
@@ -180,15 +180,15 @@ document.addEventListener("DOMContentLoaded", () => {
       visibleProducts.sort((a, b) => b[3] - a[3]);
     if (sortSelect.value === "name")
       visibleProducts.sort((a, b) => a[1].localeCompare(b[1]));
-    resultCount.textContent = `${visibleProducts.length} PRODUK`;
+    resultCount.textContent = `${visibleProducts.length} PRODUCTS`;
     grid.innerHTML = visibleProducts.length
       ? visibleProducts
           .map(
             (product) =>
-              `<article class="catalogCard"><div class="catalogCardImage"><span class="marketBadge">${product[0]}</span><img src="${product[2]}" alt="${product[1]}" loading="lazy"></div><div class="catalogCardInfo"><p class="catalogCardCategory">${product[0]}</p><h2>${product[1]}</h2><p class="catalogCardDescription">${product[4]}</p><div class="marketRating"><span>★★★★★</span> 4.9 · 128 terjual</div><div class="catalogCardBottom"><strong class="catalogCardPrice">${formatPrice(product[3])}</strong><button class="catalogAdd" type="button" data-product-index="${products.indexOf(product)}" aria-label="Tambah ${product[1]}"><span class="material-symbols-rounded">add_shopping_cart</span></button></div></div></article>`,
+              `<article class="catalogCard"><div class="catalogCardImage"><span class="marketBadge">${product[0]}</span><img src="${product[2]}" alt="${product[1]}" loading="lazy"></div><div class="catalogCardInfo"><p class="catalogCardCategory">${product[0]}</p><h2>${product[1]}</h2><p class="catalogCardDescription">${product[4]}</p><div class="marketRating"><span>★★★★★</span> 4.9 · 128 sold</div><div class="catalogCardBottom"><strong class="catalogCardPrice">${formatPrice(product[3])}</strong><button class="catalogAdd" type="button" data-product-index="${products.indexOf(product)}" aria-label="Add ${product[1]}"><span class="material-symbols-rounded">add_shopping_cart</span></button></div></div></article>`,
           )
           .join("")
-      : `<p class="catalogEmpty">Produk yang kamu cari belum ditemukan.</p>`;
+      : `<p class="catalogEmpty">The product you are looking for was not found.</p>`;
   };
   document.querySelectorAll(".catalogFilter").forEach((button) =>
     button.classList.toggle("is-active", button.dataset.filter === activeFilter),
