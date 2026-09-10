@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     localStorage.setItem("vyreCart", JSON.stringify(cart));
     updateCount();
-    // showToast(`${product[1]} masuk ke keranjang.`);
+    showToast(`${product[1]} masuk ke keranjang.`);
   };
   const render = () => {
     const query = searchInput.value.trim().toLowerCase();

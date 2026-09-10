@@ -1,4 +1,4 @@
-.pageLoader { position: fixed; inset: 0; z-index: 9999; display: grid; place-items: center; overflow: hidden; background: #101011; color: #fff; transition: opacity .45s ease, visibility .45s ease; }
+.pageLoader { position: fixed; inset: 0; z-index: 2147483647; display: grid; place-items: center; overflow: hidden; width: 100vw; height: 100dvh; min-height: 100svh; isolation: isolate; background: #101011; color: #fff; transition: opacity .45s ease, visibility .45s ease; }
 .pageLoader::before { content: ""; position: absolute; inset: 0; opacity: .22; background: repeating-linear-gradient(0deg, transparent 0 3px, rgba(184,155,255,.12) 4px 5px); pointer-events: none; }
 .pageLoader::after { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(184,155,255,.16), transparent 32%); pointer-events: none; }
 .pageLoader.is-loaded { visibility: hidden; opacity: 0; }
