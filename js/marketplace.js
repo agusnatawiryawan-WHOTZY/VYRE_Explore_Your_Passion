@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const grid = document.querySelector("#catalogGrid");
   const resultCount = document.querySelector("#catalogResultCount");
-  const toast = document.querySelector("#catalogToast");
   const searchInput = document.querySelector("#marketSearchInput");
   const sortSelect = document.querySelector("#marketSort");
   const searchArea = document.querySelector(".marketSearchArea");
@@ -143,11 +142,6 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   });
   const formatPrice = (value) => `Rp${value.toLocaleString("id-ID")}`;
-  const showToast = (message) => {
-    toast.textContent = message;
-    toast.classList.add("is-visible");
-    setTimeout(() => toast.classList.remove("is-visible"), 2200);
-  };
   const updateCount = () => {
     const cart = JSON.parse(localStorage.getItem("vyreCart") || "[]");
     document.querySelector("#marketCartCount").textContent = cart.reduce(
@@ -173,7 +167,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     localStorage.setItem("vyreCart", JSON.stringify(cart));
     updateCount();
-    showToast(`${product[1]} masuk ke keranjang.`);
   };
   const render = () => {
     const query = searchInput.value.trim().toLowerCase();

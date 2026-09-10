@@ -35,7 +35,6 @@
 .marketSearchSuggestion span:nth-child(2) { display: grid; gap: .2rem; min-width: 0; }
 .marketSearchSuggestion strong { overflow: hidden; font: 700 .78rem var(--font-ui); text-overflow: ellipsis; white-space: nowrap; }
 .marketSearchSuggestion small { color: var(--market-muted); font: .62rem var(--font-ui); }
-.marketplacePage .shopToast { position: fixed; top: calc(9rem + .75rem); right: var(--nav-padding-x); bottom: auto; z-index: 10004; max-width: min(22rem, calc(100vw - 2rem)); border: 1px solid rgba(255, 255, 255, .12); background: rgba(21, 21, 26, .96); box-shadow: 0 .7rem 1.8rem rgba(17, 17, 17, .16); }
 .marketQuickLinks { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: .7rem; color: var(--market-muted); font-size: var(--fs-caption); }
 .marketQuickLinks button { padding: 0; border: 0; background: transparent; color: var(--market-accent); font: inherit; text-decoration: underline; cursor: pointer; }
 .marketCategories { display: grid; grid-template-columns: minmax(9rem, .7fr) minmax(0, 1.8fr); gap: 2rem; align-items: end; margin: 0 0 clamp(2.5rem, 5vw, 4rem); padding: clamp(1.5rem, 3vw, 2.5rem) 0; border-top: 1px solid var(--market-line); border-bottom: 1px solid var(--market-line); }
